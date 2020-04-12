@@ -34,15 +34,18 @@
 /* Home Page end */
 
 /* Posts Page style */
+
+.new-entry{
+  margin-left: 8%;
+}
 .entry {
   padding-bottom: 30px;
   color: blue;
 }
-
 .table-header div {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin: 40px 0px;
 }
 
 .question-section{

@@ -6,6 +6,21 @@ class Posts extends Component {
   render() {
     return (
       <div className="content">
+        <form class="form-row align-items-center new-entry">
+          <div class="col-sm-10 my-1">
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder="Enter new question"
+            ></textarea>
+          </div>
+          <div class="col-sm-1 my-1">
+            <button type="submit" class="btn btn-primary m-2">
+              Enter
+            </button>
+          </div>
+        </form>
         <div className="row table-header">
           <div className="col-md-1">#</div>
           <div className="col-md-9">Questions</div>
