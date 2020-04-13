@@ -1,11 +1,10 @@
 import axios from "axios";
 
 export default {
-
   //Post new question
-  postNewQuestion: function(newQuestionObj){
-     return axios.post("/api/newQuestion", { newQuestion });
-  },
+  postNewQuestion: function(newQuestionObj) {
+    return axios.post("/api/newQuestion", { newQuestionObj });
+  }
 
   // // Gets all books
   // getBooks: function() {
