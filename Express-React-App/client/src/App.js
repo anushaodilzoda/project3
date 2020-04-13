@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar";
-import Home from "./components/home";
-import Posts from "./components/posts";
+import Home from "./pages/home";
+import Posts from "./pages/posts";
 function App() {
   return (
     <div>
