@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import API from "../utils/API";
 
 class NewInput extends Component {
   state = {
@@ -14,11 +15,12 @@ class NewInput extends Component {
 
     const newQuestion = {
       question: this.state.question
+      //need more details: topic, user, date
     };
     console.log("Question to be posted", newQuestion);
-    // axios.post("/postNew", { newQuestion }).then(res => {
-    //   console.log(res);
-    // });
+    API.postNewQuestion(newQuestion)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   render() {
