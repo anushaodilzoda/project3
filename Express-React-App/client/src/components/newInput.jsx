@@ -13,11 +13,13 @@ class NewInput extends Component {
     event.preventDefault();
 
     const newQuestion = {
-      question: this.state.question
-      //need more details: topic, user, date
+      topic: "Javascript",
+      question: this.state.question,
+      user: "Khaliunaa"
+      //topic and user are hardcoded for now
     };
     console.log("Question to be posted", newQuestion);
-    API.postNewQuestion(newQuestion)
+    API.saveQuestion(newQuestion)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
