@@ -1,4 +1,4 @@
 module.exports = {
-  data: require("./data"),
+  Data: require("./data"),
   // users: require("./users")
 };

@@ -9,6 +9,7 @@ class NewInput extends Component {
   handleChange = event => {
     this.setState({ question: event.target.value });
   };
+  
   handleSubmit = event => {
     event.preventDefault();
 
@@ -31,14 +32,14 @@ class NewInput extends Component {
         class="form-row align-items-center new-entry"
       >
         <div class="col-sm-10 my-1">
-          <textarea
+          <input
             onChange={this.handleChange}
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="1"
             name="question"
             placeholder="Enter new question"
-          ></textarea>
+          ></input>
         </div>
         <div class="col-sm-1 my-1">
           <button type="submit" class="btn btn-primary m-2">
