@@ -2,9 +2,14 @@ const router = require("express").Router();
 const dataController = require("../controllers/dataController");
 
 
-//Matches with "/api"
-router.route("/newQuestion")
+//Matches with "/api/Question"
+router.route("/Question")
   .post(dataController.create);
+
+  ////Matches with "/api/Topic"
+router.route("/Topic")
+  .get(dataController.getTopics)
+  .post(dataController.createTopic);
 
 //   // Matches with "/api/search/:keyword"
 //   router

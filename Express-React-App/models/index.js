@@ -1,4 +1,5 @@
 module.exports = {
   Data: require("./data"),
-  // users: require("./users")
+  Topic: require("./topic"),
+  User: require("./Users"),
 };

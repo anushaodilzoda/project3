@@ -3,8 +3,15 @@ import axios from "axios";
 export default {
   //Post new question
   saveQuestion: function(newQuestionObj) {
-    return axios.post("/api/newQuestion", newQuestionObj);
-  }
+    return axios.post("/api/Question", newQuestionObj);
+  },
+  saveTopic: function(newTopicObj){
+    return axios.post("/api/Topic", newTopicObj);
+  },
+
+  getTopics: function(){
+    return axios.get("/api/Topic");
+  },
 
   // // Gets all books
   // getBooks: function() {
