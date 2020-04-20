@@ -14,14 +14,15 @@ class NewInput extends Component {
     event.preventDefault();
 
     const newQuestion = {
-      topic: "Javascript",
+      topic: this.props.dashboard,
       question: this.state.question,
-      user: "Khaliunaa"
+      user: "Temp"
       //topic and user are hardcoded for now
     };
     console.log("Question to be posted", newQuestion);
     API.saveQuestion(newQuestion)
       .then(res => console.log(res))
+      .then(res => window.location.reload(false))
       .catch(err => console.log(err));
   };
 
@@ -42,6 +43,7 @@ class NewInput extends Component {
           ></input>
         </div>
         <div class="col-sm-1 my-1">
+          
           <button type="submit" class="btn btn-primary m-2">
             Enter
           </button>
@@ -52,3 +54,4 @@ class NewInput extends Component {
 }
 
 export default NewInput;
+

@@ -13,6 +13,11 @@ export default {
     return axios.get("/api/Topic");
   },
 
+  populateDashboard: function(req){
+      console.log("being called: "+req);
+    return axios.get("api/dashboard/"+req);
+  }
+
   // // Gets all books
   // getBooks: function() {
   //   return axios.get("/api/books");

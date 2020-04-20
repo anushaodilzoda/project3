@@ -1,21 +1,25 @@
 const db = require("../models");
 
-// Defining methods for the employeesController
 module.exports = {
 
   //posting new question
   create: function(req, res) {
-    console.log("in the server");
-    console.log(req.body);
     db.Data.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
 
+  //fetching all questions for the requested topic
+  populateDashboard: function(req, res) {
+    db.Data.find({topic: req.params.name})
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .then(dbModel => console.log(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   //posting new topic
   createTopic: function(req, res) {
-    console.log("posting new topic");
-    console.log(req.body);
     db.Topic.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -23,9 +27,8 @@ module.exports = {
 
   //getting all topics
   getTopics: function(req, res) {
-    console.log("getting all topics");
     db.Topic.find()
-      //.sort({ date: -1 })
+      .sort({ date: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
