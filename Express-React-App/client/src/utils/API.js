@@ -14,8 +14,11 @@ export default {
   },
 
   populateDashboard: function(req){
-      console.log("being called: "+req);
     return axios.get("api/dashboard/"+req);
+  },
+
+  search: function(searchPramObj){
+    return axios.get("api/search", {params: searchPramObj});
   }
 
   // // Gets all books

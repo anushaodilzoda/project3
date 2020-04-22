@@ -1,7 +1,6 @@
 const db = require("../models");
 
 module.exports = {
-
   //posting new question
   create: function(req, res) {
     db.Data.create(req.body)
@@ -11,10 +10,9 @@ module.exports = {
 
   //fetching all questions for the requested topic
   populateDashboard: function(req, res) {
-    db.Data.find({topic: req.params.name})
+    db.Data.find({ topic: req.params.name })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
-      .then(dbModel => console.log(dbModel))
       .catch(err => res.status(422).json(err));
   },
 
@@ -33,7 +31,27 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  //searching questions by keyword in global or single topic scope
+  search: function(req, res) {
+    console.log(req.query);
 
+    var scope = req.query.scope;
+    var keyword = { $regex: req.query.keyword, $options: "i" };
+
+    if (scope == "All") {
+      db.Data.find({ question: keyword })
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    } else {
+      db.Data.find({
+        $and: [{ topic: scope }, { question: keyword }]
+      })
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    }
+  }
 
   // findAll: function(req, res) {
   //   db.Employee.find(req.query)

@@ -15,7 +15,9 @@ router.route("/Topic")
 router.route("/dashboard/:name")
   .get(dataController.populateDashboard);
 
-
+//Matches with "/api/search"
+router.route("/search")
+  .get(dataController.search);
 
 //   // Matches with "/api/search/:keyword"
 //   router

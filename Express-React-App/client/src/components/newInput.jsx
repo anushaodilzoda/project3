@@ -13,8 +13,10 @@ class NewInput extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    const { dashboard, parentMethod } = this.props;
+
     const newQuestion = {
-      topic: this.props.dashboard,
+      topic: dashboard,
       question: this.state.question,
       user: "Temp"
       //topic and user are hardcoded for now
@@ -22,7 +24,7 @@ class NewInput extends Component {
     console.log("Question to be posted", newQuestion);
     API.saveQuestion(newQuestion)
       .then(res => console.log(res))
-      .then(res => window.location.reload(false))
+      .then(res => parentMethod(dashboard))
       .catch(err => console.log(err));
   };
 
