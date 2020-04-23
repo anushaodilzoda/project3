@@ -12,7 +12,6 @@ class Home extends Component {
     return (
       <div className="content">
         <h2>Home</h2>
-        <Search scope="All"/>
         <Topics/>
       </div>
     );

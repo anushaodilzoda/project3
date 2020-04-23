@@ -22,9 +22,9 @@ class Posts extends Component {
       .catch(err => console.log(err));
   };
 
-  reload = () =>{
+  reload = () => {
     this.loadQuestions(this.state.dashboard);
-  }
+  };
 
   setQuestions = questions => {
     this.setState({ questions });
@@ -36,11 +36,22 @@ class Posts extends Component {
     return (
       <div className="content">
         <h1>{dashboard}</h1>
-        <Search scope={dashboard} parentMethod={this.setQuestions} />
-        <button onClick={this.reload} type="button" class="btn btn-outline-primary">
-          Show all
-        </button>
-        <NewInput dashboard={dashboard} parentMethod={this.loadQuestions} />
+        {dashboard != "All Topics" ? (
+          <NewInput dashboard={dashboard} parentMethod={this.loadQuestions} />
+        ) : (
+          <div></div>
+        )}
+        <br></br>
+        <form className="form-inline">
+          <Search scope={dashboard} parentMethod={this.setQuestions} />
+          <button
+            onClick={this.reload}
+            type="button"
+            class="btn btn-outline-primary m-2"
+          >
+            Show all
+          </button>
+        </form>
         {/* table header */}
         <div className="row table-header">
           <div className="col-md-1">#</div>

@@ -10,10 +10,18 @@ module.exports = {
 
   //fetching all questions for the requested topic
   populateDashboard: function(req, res) {
-    db.Data.find({ topic: req.params.name })
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    var name = req.params.name;
+    if (name == "All Topics") {
+      db.Data.find({})
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    } else {
+      db.Data.find({ topic: name })
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    }
   },
 
   //posting new topic
@@ -38,7 +46,7 @@ module.exports = {
     var scope = req.query.scope;
     var keyword = { $regex: req.query.keyword, $options: "i" };
 
-    if (scope == "All") {
+    if (scope == "All Topics") {
       db.Data.find({ question: keyword })
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))

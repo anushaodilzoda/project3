@@ -36,6 +36,19 @@ class Topics extends Component {
   render() {
     return (
       <form class="form-inline">
+        {/* Default All Topic link */}
+        <Link
+          to={{
+            pathname: "/dashboard",
+            state: { dashboard: "All Topics" }
+          }}
+          class="m-2"
+        >
+          <button type="submit" class="btn btn-warning mb-2">
+            All Topics
+          </button>
+        </Link>
+        {/* Fetching and Displaying all topics in the Home page */}
         {this.state.topics.map(topic => (
           <Link
             to={{
@@ -45,12 +58,12 @@ class Topics extends Component {
             class="m-2"
             key={topic._id}
           >
-            {/* <Link to="/posts" class="m-2" key= {topic._id}> */}
             <button type="submit" class="btn btn-warning mb-2">
               {topic.topic}
             </button>
           </Link>
         ))}
+        {/* New Dashboard input */}
         <div class="form-group mx-sm-2 mb-2">
           <input
             onChange={this.handleInputChange}
