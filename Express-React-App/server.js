@@ -2,7 +2,6 @@ const express = require("express");
 
 //const connectDB = require("./config/db");
 
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -18,22 +17,24 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-
 // Connect to the Mongo DB
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/interviewPrep", function(err, db){
-  if(err) {
-  throw err;
-  }else{
-    console.log("Successfully connected to the Mongodb");
-  }
-})
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/interviewPrep",
+    function(err, db) {
+        if (err) {
+            throw err;
+        } else {
+            console.log("Successfully connected to the Mongodb");
+        }
+    }
+);
 
 //connectDB();
 
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
 // Start the API server
 app.listen(PORT, function() {
-
     console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-
