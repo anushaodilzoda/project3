@@ -3,6 +3,7 @@ import "../App.css";
 import NewInput from "../components/newInput";
 import Search from "../components/search";
 import API from "../utils/API";
+import Navbar from "../components/navbar"
 
 class Posts extends Component {
   state = {
@@ -34,6 +35,8 @@ class Posts extends Component {
     var { dashboard, questions } = this.state;
 
     return (
+      <React.Fragment>
+      <Navbar />
       <div className="content">
         <h1>{dashboard}</h1>
         {dashboard != "All Topics" ? (
@@ -61,9 +64,9 @@ class Posts extends Component {
         </div>
         {/* table body */}
 
-        {questions.map((each, index) => 
+        {questions.map((each, index) => (
           <div className="row question-section">
-            <div className="col-md-1">{index+1}</div>
+            <div className="col-md-1">{index + 1}</div>
             <div className="col-md-9">
               {each.question}
               <button
@@ -99,8 +102,9 @@ class Posts extends Component {
             <div className="col-md-1">{each.user}</div>
             <div className="col-md-1">{each.date}</div>
           </div>
-        )}
+        ))}
       </div>
+      </React.Fragment>
     );
   }
 }

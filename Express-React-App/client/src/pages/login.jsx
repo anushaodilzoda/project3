@@ -34,10 +34,9 @@ class Login extends Component {
       return <Redirect from="/login" to='/' />
     }
     return (
-
-        <div>
-        <h5 style={{ marginBottom: 20 }}>Login</h5>
-        <form style={{ width: 300 }}>
+      <div className="wrapper">
+        <div className="text">Login</div>
+        <form style={{ width: 350 }}>
           <Input onChange={this.handleEmailChange} name="email" placeholder="Email" />
           <Input
             onChange={this.handlePassChange}
@@ -45,9 +44,9 @@ class Login extends Component {
             name="password"
             placeholder="Password"
           />
-          <FormBtn disabled={!(this.state.email && this.state.password)} onClick={this.handleFormSubmit}>
-            Login
-          </FormBtn>
+          <button className="btn btn-primary mb-3" disabled={!(this.state.email && this.state.password)} onClick={this.handleFormSubmit}>
+            Sign in
+          </button>
         </form>
         <Link to="/signup">
           Create an account

@@ -33,9 +33,9 @@ export function Signup() {
   var { name, email, password1, password2 } = formObject;
 
   return (
-    <div>
-      <h5 style={{ marginBottom: 20 }}>Sign Up</h5>
-      <form style={{ width: 300 }}>
+    <div className="wrapper">
+      <div className="text">Sign Up</div>
+      <form style={{ width: 350 }}>
         <Input onChange={handleInputChange} name="name" placeholder="Name" />
         <Input onChange={handleInputChange} name="email" placeholder="Email" />
         <Input
@@ -48,18 +48,18 @@ export function Signup() {
           onChange={handleInputChange}
           type="password"
           name="password2"
-          placeholder="Please enter the password again"
+          placeholder="Confirm password"
         />
-        <FormBtn
+        <button className="btn btn-primary mb-3"
           disabled={!(name && email && password1 && password2)}
           onClick={handleFormSubmit}
         >
           Sign up
-        </FormBtn>
+        </button>
       </form>
       <div>
         Already have an account?
-        <Link to="/login">Sign in</Link>
+        <Link to="/login"> Login</Link>
       </div>
     </div>
   );

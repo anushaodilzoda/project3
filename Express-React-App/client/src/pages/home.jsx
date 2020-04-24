@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import "../App.css";
 import Topics from "../components/Topics";
-import Search from "../components/search";
+import Navbar from "../components/navbar";
 
 class Home extends Component {
-  state = {
-  };
-
+  state = {};
 
   render() {
     return (
-      <div className="content">
-        <h2>Home</h2>
-        <Topics/>
-      </div>
+      <React.Fragment>
+        <Navbar />
+        <div className="content">
+          <h2>Home</h2>
+          <Topics />
+        </div>
+      </React.Fragment>
     );
   }
 }
