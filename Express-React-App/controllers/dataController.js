@@ -41,8 +41,6 @@ module.exports = {
 
   //searching questions by keyword in global or single topic scope
   search: function(req, res) {
-    console.log(req.query);
-
     var scope = req.query.scope;
     var keyword = { $regex: req.query.keyword, $options: "i" };
 

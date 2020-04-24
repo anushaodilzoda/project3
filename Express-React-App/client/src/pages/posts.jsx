@@ -61,9 +61,9 @@ class Posts extends Component {
         </div>
         {/* table body */}
 
-        {questions.map(each => (
+        {questions.map((each, index) => 
           <div className="row question-section">
-            <div className="col-md-1">1</div>
+            <div className="col-md-1">{index+1}</div>
             <div className="col-md-9">
               {each.question}
               <button
@@ -99,7 +99,7 @@ class Posts extends Component {
             <div className="col-md-1">{each.user}</div>
             <div className="col-md-1">{each.date}</div>
           </div>
-        ))}
+        )}
       </div>
     );
   }

@@ -9,7 +9,7 @@ const { check, validationResult } = require("express-validator");
 const User = require("../../models/User");
 
 router.post(
-    "/", [
+    "/newUserSignup", [
         check("name", "Name is required").not().isEmpty(),
         check("email", "Please include a valid email").isEmail(),
         check(
@@ -36,7 +36,6 @@ router.post(
             user = new User({
                 name,
                 email,
-                avatar,
                 password,
             });
 

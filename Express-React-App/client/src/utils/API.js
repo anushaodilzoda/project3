@@ -19,6 +19,13 @@ export default {
 
   search: function(searchPramObj){
     return axios.get("api/search", {params: searchPramObj});
+  },
+
+  //Signin and signup users
+
+  signup: function(userInput){
+    console.log(userInput);
+    return axios.post("api/newUserSignup", userInput);
   }
 
   // // Gets all books

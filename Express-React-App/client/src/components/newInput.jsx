@@ -21,9 +21,7 @@ class NewInput extends Component {
       user: "Temp"
       //topic and user are hardcoded for now
     };
-    console.log("Question to be posted", newQuestion);
     API.saveQuestion(newQuestion)
-      .then(res => console.log(res))
       .then(res => parentMethod(dashboard))
       .catch(err => console.log(err));
   };
