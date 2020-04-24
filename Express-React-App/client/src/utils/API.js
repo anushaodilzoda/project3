@@ -26,7 +26,14 @@ export default {
   signup: function(userInput){
     console.log(userInput);
     return axios.post("api/newUserSignup", userInput);
-  }
+  },
+
+  login: function(userInput){
+    console.log(userInput);
+    return axios.post("api/userLogin", userInput);
+  },
+
+  
 
   // // Gets all books
   // getBooks: function() {
