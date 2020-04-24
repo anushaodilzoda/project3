@@ -5,7 +5,7 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Posts from "./pages/posts";
 import { Signup } from './pages/signup';
- import { Login } from './pages/login';
+ import Login from './pages/login';
 function App() {
   return (
     <div>

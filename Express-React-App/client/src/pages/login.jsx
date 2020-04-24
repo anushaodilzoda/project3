@@ -1,54 +1,61 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { Input, FormBtn } from "../components/Form";
+import { Redirect } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 
-export function Login (){
+class Login extends Component {
+  state = {
+    redirect: false,
+    email: '',
+    password: '',
+  };
 
-  const [formObject, setFormObject] = useState({});
-  
-    // Handles updating component state when the user types into the input field
-    function handleInputChange(event) {
-        const { name, value } = event.target;
-        setFormObject({ ...formObject, [name]: value });
-      }
-
-  // When the form is submitted, use the API.login method to save the employees data
-  function handleFormSubmit(event) {
-    event.preventDefault();
-      API.login({
-        email: formObject.email,
-        password: formObject.password,
-      })
-        .then(res => console.log("Successfully logged in"))
-        .catch(err => console.log(err));
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value });
+  };
+  handlePassChange=event=>{
+      this.setState({password: event.target.value})
   }
+  
+  handleFormSubmit = event => {
+      event.preventDefault();
+      API.login({
+        email: this.state.email,
+        password: this.state.password
+      })
+        .then(res => this.setState({redirect: true}))
+        .catch(err => console.log(err));
+  };
 
-    var { email, password } = formObject;
 
+  render() {
+    if(this.state.redirect==true){
+      return <Redirect from="/login" to='/' />
+    }
     return (
-      <div>
+
+        <div>
         <h5 style={{ marginBottom: 20 }}>Login</h5>
         <form style={{ width: 300 }}>
+          <Input onChange={this.handleEmailChange} name="email" placeholder="Email" />
           <Input
-            onChange={handleInputChange}
-            name="email"
-            placeholder="Email"
-          />
-          <Input
-            onChange={handleInputChange}
+            onChange={this.handlePassChange}
             type="password"
             name="password"
             placeholder="Password"
           />
-          <FormBtn
-            disabled={!(email && password)}
-            onClick={handleFormSubmit}
-          >
+          <FormBtn disabled={!(this.state.email && this.state.password)} onClick={this.handleFormSubmit}>
             Login
           </FormBtn>
         </form>
+        <Link to="/signup">
+          Create an account
+        </Link>
       </div>
     );
-    }
+  }
+}
 
+export default Login;
 
