@@ -22,15 +22,14 @@ class Search extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="form-inline my-2 my-lg-0">
-        <h5>Filter:</h5>
+        <h5 className="my-2">Search</h5>
         <input
           onChange={this.handleChange}
           className="form-control m-2"
           name="search"
-          placeholder="Search"
         ></input>
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
+        <button className="btn btn-primary" type="submit">
+        <i class="fas fa-search"></i>
         </button>
       </form>
     );

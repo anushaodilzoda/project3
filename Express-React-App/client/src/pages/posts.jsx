@@ -8,7 +8,8 @@ import Navbar from "../components/navbar"
 class Posts extends Component {
   state = {
     dashboard: "",
-    questions: [{}]
+    questions: [{}],
+    addNew: false
   };
 
   componentDidMount() {
@@ -31,26 +32,35 @@ class Posts extends Component {
     this.setState({ questions });
   };
 
+  toggle = () =>{
+    this.setState({addNew: !this.state.addNew});
+  }
+
   render() {
-    var { dashboard, questions } = this.state;
+    var { addNew, dashboard, questions } = this.state;
 
     return (
       <React.Fragment>
       <Navbar />
       <div className="content">
+        <div className='row dash-header'>
         <h1>{dashboard}</h1>
-        {dashboard != "All Topics" ? (
+        <button onClick={this.toggle} className="btn btn-dark badge-pill newbtn">{addNew==false ? 'Add ' : 'Hide ' } <i class="fas fa-question-circle"></i></button>
+        <div className='col-md-9'>
+        {dashboard != "All Topics" && addNew==true ? (
           <NewInput dashboard={dashboard} parentMethod={this.loadQuestions} />
         ) : (
           <div></div>
         )}
+        </div>
+        </div>
         <br></br>
-        <form className="form-inline">
+        <form className="form-inline filter">
           <Search scope={dashboard} parentMethod={this.setQuestions} />
           <button
             onClick={this.reload}
             type="button"
-            class="btn btn-outline-primary m-2"
+            class="btn btn-success m-2"
           >
             Show all
           </button>

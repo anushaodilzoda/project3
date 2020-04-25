@@ -9,16 +9,18 @@ class NewInput extends Component {
   handleChange = event => {
     this.setState({ question: event.target.value });
   };
-  
+
   handleSubmit = event => {
     event.preventDefault();
 
     const { dashboard, parentMethod } = this.props;
-
+    const today = new Date();
+    var date = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate();
     const newQuestion = {
       topic: dashboard,
       question: this.state.question,
-      user: "Temp"
+      user: "Temp",
+      date: date
       //topic and user are hardcoded for now
     };
     API.saveQuestion(newQuestion)
@@ -32,20 +34,20 @@ class NewInput extends Component {
         onSubmit={this.handleSubmit}
         class="form-row align-items-center new-entry"
       >
-        <div class="col-sm-10 my-1">
+        <div class="col-sm-10 my-2">
           <input
             onChange={this.handleChange}
-            class="form-control"
+            className="form-control"
             id="exampleFormControlTextarea1"
             rows="1"
             name="question"
-            placeholder="Enter new question"
+            // placeholder="Enter new question"
+            style={{borderRadius: 25}}
           ></input>
         </div>
-        <div class="col-sm-1 my-1">
-          
-          <button type="submit" class="btn btn-primary m-2">
-            Enter
+        <div class="col-sm-2">
+          <button type="submit" class="btn badge-pill btn-primary">
+            Enter <i class="fas fa-question-circle"></i>
           </button>
         </div>
       </form>
@@ -54,4 +56,3 @@ class NewInput extends Component {
 }
 
 export default NewInput;
-
