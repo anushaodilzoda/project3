@@ -20,6 +20,8 @@ class Topics extends Component {
 
   handleAdd = event => {
     event.preventDefault();
+    event.target.reset();
+
     API.saveTopic({
       topic: this.state.newTopic,
       user: "Temp"
@@ -35,53 +37,55 @@ class Topics extends Component {
 
   render() {
     return (
-      <form class="form-inline">
-        {/* Default All Topic link */}
-        <Link
-          to={{
-            pathname: "/dashboard",
-            state: { dashboard: "All Topics" }
-          }}
-          class="m-2"
-        >
-          <button type="submit" class="btn btn-warning mb-2">
-            All Topics
-          </button>
-        </Link>
-        {/* Fetching and Displaying all topics in the Home page */}
-        {this.state.topics.map(topic => (
+      <React.Fragment>
+        <form class="form-inline">
+          {/* Default All Topic link */}
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: topic.topic }
+              state: { dashboard: "All Topics" }
             }}
             class="m-2"
-            key={topic._id}
           >
             <button type="submit" class="btn btn-warning mb-2">
-              {topic.topic}
+              All Topics
             </button>
           </Link>
-        ))}
-        {/* New Dashboard input */}
-        <div class="form-group mx-sm-2 mb-2">
-          <input
-            onChange={this.handleInputChange}
-            type="text"
-            class="form-control"
-            placeholder="New dashboard"
-          ></input>
-        </div>
-        <Link to="/" class="m-2">
-          <button
-            onClick={this.handleAdd}
-            type="submit"
-            class="btn btn-primary mb-2"
-          >
-            + Add
-          </button>
-        </Link>
-      </form>
+          {/* Fetching and Displaying all topics in the Home page */}
+          {this.state.topics.map(topic => (
+            <Link
+              to={{
+                pathname: "/dashboard",
+                state: { dashboard: topic.topic }
+              }}
+              class="m-2"
+              key={topic._id}
+            >
+              <button type="submit" class="btn btn-warning mb-2">
+                {topic.topic}
+              </button>
+            </Link>
+          ))}
+        </form>
+        <form onSubmit={this.handleAdd} className="form-inline">
+          {/* New Dashboard input */}
+          <div class="form-group mx-sm-2 mb-2">
+            <input
+              onChange={this.handleInputChange}
+              type="text"
+              class="form-control"
+              placeholder="New dashboard"
+              style={{ width: 200 }}
+            ></input>
+          </div>
+            <button
+              type="submit"
+              class="btn btn-primary mb-2"
+            >
+              + Add
+            </button>
+        </form>
+      </React.Fragment>
     );
   }
 }

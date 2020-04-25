@@ -15,6 +15,8 @@ export function Signup() {
   // When the form is submitted, use the API.signup method to save the employees data
   function handleFormSubmit(event) {
     event.preventDefault();
+    event.target.reset();
+
     if (formObject.password1 == formObject.password2) {
       API.signup({
         name: formObject.name,
@@ -35,7 +37,7 @@ export function Signup() {
   return (
     <div className="wrapper">
       <div className="text">Sign Up</div>
-      <form style={{ width: 350 }}>
+      <form onSubmit={handleFormSubmit}  style={{ width: 350 }}>
         <Input onChange={handleInputChange} name="name" placeholder="Name" />
         <Input onChange={handleInputChange} name="email" placeholder="Email" />
         <Input
@@ -52,7 +54,7 @@ export function Signup() {
         />
         <button className="btn btn-primary mb-3"
           disabled={!(name && email && password1 && password2)}
-          onClick={handleFormSubmit}
+          type="submit"
         >
           Sign up
         </button>

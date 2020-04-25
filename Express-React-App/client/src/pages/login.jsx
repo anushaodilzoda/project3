@@ -20,6 +20,7 @@ class Login extends Component {
   
   handleFormSubmit = event => {
       event.preventDefault();
+
       API.login({
         email: this.state.email,
         password: this.state.password
@@ -36,7 +37,7 @@ class Login extends Component {
     return (
       <div className="wrapper">
         <div className="text">Login</div>
-        <form style={{ width: 350 }}>
+        <form onSubmit={this.handleFormSubmit} style={{ width: 350 }}>
           <Input onChange={this.handleEmailChange} name="email" placeholder="Email" />
           <Input
             onChange={this.handlePassChange}
@@ -44,7 +45,7 @@ class Login extends Component {
             name="password"
             placeholder="Password"
           />
-          <button className="btn btn-primary mb-3" disabled={!(this.state.email && this.state.password)} onClick={this.handleFormSubmit}>
+          <button className="btn btn-primary mb-3" disabled={!(this.state.email && this.state.password)} type="submit">
             Sign in
           </button>
         </form>

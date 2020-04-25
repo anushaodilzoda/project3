@@ -12,6 +12,7 @@ class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    event.target.reset();
     API.search({ 
         keyword: this.state.keyword, 
         scope: this.props.scope })

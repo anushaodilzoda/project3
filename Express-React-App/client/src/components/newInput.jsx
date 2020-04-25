@@ -12,7 +12,8 @@ class NewInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    event.target.reset();
+    
     const { dashboard, parentMethod } = this.props;
     const today = new Date();
     var date = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate();
