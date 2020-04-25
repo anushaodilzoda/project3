@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const dataSchema = new Schema({
-  topic: {
+  question: {
     type: String,
     required: true
   },
 
-  question: {
+  answer: {
     type: String,
     required: true
   },
@@ -23,6 +23,6 @@ const dataSchema = new Schema({
   }
 });
 
-const Data = mongoose.model("Data", dataSchema);
+const Answer = mongoose.model("Answer", dataSchema);
 
-module.exports = Data;
+module.exports = Answer;

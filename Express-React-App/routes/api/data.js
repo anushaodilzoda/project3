@@ -6,14 +6,17 @@ const dataController = require("../../controllers/dataController");
 router.route("/Question")
   .post(dataController.create);
 
+router.route("/dashboard/:name")
+  .get(dataController.populateDashboard);
+
+router.route("/Answer")
+  .get(dataController.getAnswer)
+  .post(dataController.saveAnswer)
+
 //Matches with "/api/Topic"
 router.route("/Topic")
   .get(dataController.getTopics)
   .post(dataController.createTopic);
-
-//Matches with "/api/Topic"
-router.route("/dashboard/:name")
-  .get(dataController.populateDashboard);
 
 //Matches with "/api/search"
 router.route("/search")

@@ -1,20 +1,31 @@
 import axios from "axios";
 
 export default {
+  //Get questions
+  populateDashboard: function(req){
+    return axios.get("api/dashboard/"+req);
+  },
+
   //Post new question
   saveQuestion: function(newQuestionObj) {
     return axios.post("/api/Question", newQuestionObj);
   },
+
+  //Save answer
+  saveAnswer: function(newAnswerObj){
+    return axios.post("/api/Answer", newAnswerObj);
+  },
+
+  getAnswers: function(question){
+    return axios.get("/api/Answer", {params: {question: question}})
+  },
+
   saveTopic: function(newTopicObj){
     return axios.post("/api/Topic", newTopicObj);
   },
 
   getTopics: function(){
     return axios.get("/api/Topic");
-  },
-
-  populateDashboard: function(req){
-    return axios.get("api/dashboard/"+req);
   },
 
   search: function(searchPramObj){
@@ -24,12 +35,10 @@ export default {
   //Signin and signup users
 
   signup: function(userInput){
-    console.log(userInput);
     return axios.post("api/newUserSignup", userInput);
   },
 
   login: function(userInput){
-    console.log(userInput);
     return axios.post("api/userLogin", userInput);
   },
 
