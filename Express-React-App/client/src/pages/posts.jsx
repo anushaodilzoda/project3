@@ -60,7 +60,7 @@ class Posts extends Component {
           <button
             onClick={this.reload}
             type="button"
-            class="btn btn-success m-2"
+            class="btn btn-outline-primary m-2"
           >
             Show all
           </button>
@@ -80,11 +80,11 @@ class Posts extends Component {
             <div className="col-md-9">
               {each.question}
               <button
-                class="btn btn-outline-primary btn-sm"
+                class="btn btn-sm"
                 data-toggle="collapse"
                 data-target="#entry1"
               >
-                +
+                <i class="fas fa-plus"></i>
               </button>
               <div className="answer_section">
                 <div id="entry1" class="collapse mt-2">

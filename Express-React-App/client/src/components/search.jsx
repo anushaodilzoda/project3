@@ -26,6 +26,7 @@ class Search extends Component {
         <input
           onChange={this.handleChange}
           className="form-control m-2"
+          style={{width: 300}}
           name="search"
         ></input>
         <button className="btn btn-primary" type="submit">

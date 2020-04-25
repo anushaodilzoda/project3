@@ -32,7 +32,7 @@ class NewInput extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        class="form-row align-items-center new-entry"
+        class="form-row align-items-center new-entry m-1"
       >
         <div class="col-sm-10 my-2">
           <input
@@ -42,12 +42,12 @@ class NewInput extends Component {
             rows="1"
             name="question"
             // placeholder="Enter new question"
-            style={{borderRadius: 25}}
+            style={{borderRadius: 25, border: '1px solid #8a8585e0'}}
           ></input>
         </div>
         <div class="col-sm-2">
           <button type="submit" class="btn badge-pill btn-primary">
-            Enter <i class="fas fa-question-circle"></i>
+            Enter new <i class="fas fa-question-circle"></i>
           </button>
         </div>
       </form>
