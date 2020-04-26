@@ -31,6 +31,18 @@
 .content {
   margin: 50px 100px;
 }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  display: block;
+}
+.border {
+  font-weight: bold;
+  margin-bottom: .5rem!important;
+  border: 7px solid lightblue !important;
+}
+
 /* Home Page end */
 
 /* Posts Page style */
@@ -79,4 +91,5 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
 
