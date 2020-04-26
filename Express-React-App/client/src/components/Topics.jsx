@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+import icon from "../files/icon";
 
 class Topics extends Component {
   state = {
@@ -35,9 +36,10 @@ class Topics extends Component {
     this.setState({ newTopic: event.target.value });
   };
 
+
   render() {
     return (
-      <React.Fragment>
+      <div className="content">
         <form class="form-inline">
           {/* Default All Topic link */}
           <Link
@@ -47,7 +49,8 @@ class Topics extends Component {
             }}
             class="m-2"
           >
-            <button type="submit" class="btn btn-warning mb-2">
+            <button type="submit" style={{marginRight: 20}} class="btn btn-light mb-2 border">
+            <img style={{height: 150}} src="https://www.indiaeducation.net/imagesvr_ce/1375/full%20stack%20developer.JPG"/>
               All Topics
             </button>
           </Link>
@@ -56,14 +59,18 @@ class Topics extends Component {
             <Link
               to={{
                 pathname: "/dashboard",
-                state: { dashboard: topic.topic }
+              state: { dashboard: topic.topic} 
+
               }}
               class="m-2"
               key={topic._id}
             >
-              <button type="submit" class="btn btn-warning mb-2">
+             
+             <button type="submit" style={{marginRight: 20}} class="btn btn-light mb-2 border">
+              <img style={{height: 150}} src={icon.data[("_"+topic.topic).toLowerCase()] ? (icon.data[("_"+topic.topic).toLowerCase()]) : "https://static.vecteezy.com/system/resources/previews/000/589/510/non_2x/vector-happy-emoji-icon.jpg"}></img>
                 {topic.topic}
               </button>
+
             </Link>
           ))}
         </form>
@@ -85,7 +92,7 @@ class Topics extends Component {
               + Add
             </button>
         </form>
-      </React.Fragment>
+      </div>
     );
   }
 }
