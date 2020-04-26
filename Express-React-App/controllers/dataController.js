@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
   //posting new question
   create: function(req, res) {
-    db.Data.create(req.body)
+    db.Question.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -12,16 +12,31 @@ module.exports = {
   populateDashboard: function(req, res) {
     var name = req.params.name;
     if (name == "All Topics") {
-      db.Data.find({})
+      db.Question.find({})
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     } else {
-      db.Data.find({ topic: name })
+      db.Question.find({ topic: name })
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
+  },
+
+  //posting new Answer
+  saveAnswer: function(req, res){
+    db.Answer.create(req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
+  //getting all answers for the requested question
+  getAnswer: function(req, res){
+    db.Answer.find({ question: req.query.question })
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
   },
 
   //posting new topic
@@ -45,12 +60,12 @@ module.exports = {
     var keyword = { $regex: req.query.keyword, $options: "i" };
 
     if (scope == "All Topics") {
-      db.Data.find({ question: keyword })
+      db.Question.find({ question: keyword })
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     } else {
-      db.Data.find({
+      db.Question.find({
         $and: [{ topic: scope }, { question: keyword }]
       })
         .sort({ date: -1 })

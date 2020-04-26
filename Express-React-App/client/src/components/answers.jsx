@@ -1,0 +1,83 @@
+import React, { Component } from "react";
+import API from "../utils/API";
+
+class Answers extends Component {
+  state = {
+    answers:[{}],
+    new: ''
+  };
+
+  componentDidMount() {
+    this.loadAnswers();
+  }
+
+  loadAnswers = () => {
+    API.getAnswers(this.props.question)
+      .then(res => this.setState({ answers: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  handleChange = event => {
+    this.setState({ new: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const questionID =this.props.question;
+
+    const today = new Date();
+    var date = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate();
+    const newAnswer = {
+      question: questionID,
+      answer: this.state.new,
+      user: "Temp",
+      date: date
+      //user is hardcoded for now
+    };
+
+    API.saveAnswer(newAnswer)
+      .then(res => this.loadAnswers())
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+        <React.Fragment>
+            <div className="answer_section">
+            <div class="mt-2">
+            {this.state.answers.map((each, index) => (
+            <div className="row section">
+            <div>{index + 1}</div>
+            <div className="col-md-9">
+              {each.answer}
+            </div>
+            <div className="col-md-1">{each.user}</div>
+            <div className="col-md-1">{each.date}</div>
+          </div>
+            ))}
+            <form>
+                <div class="form-group">
+                <textarea
+                    onChange={this.handleChange}
+                    class="form-control"
+                    id="inputArea"
+                    rows="3"
+                ></textarea>
+                </div>
+                <button
+                onClick = {this.handleSubmit}
+                type="submit"
+                class="btn btn-outline-primary btn-sm"
+                >
+                Enter Solution
+                </button>
+            </form>
+            </div>
+            </div>
+        </React.Fragment>
+    );
+ }
+}
+
+export default Answers;
