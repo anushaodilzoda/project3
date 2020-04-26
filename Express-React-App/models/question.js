@@ -17,9 +17,14 @@ const dataSchema = new Schema({
     required: true
   },
 
-  date: {
+  formattedDate: {
     type: String,
     required: true
+  },
+
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

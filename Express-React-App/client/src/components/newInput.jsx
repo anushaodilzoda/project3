@@ -21,7 +21,7 @@ class NewInput extends Component {
       topic: dashboard,
       question: this.state.question,
       user: "Temp",
-      date: date
+      formattedDate: date
       //topic and user are hardcoded for now
     };
     API.saveQuestion(newQuestion)

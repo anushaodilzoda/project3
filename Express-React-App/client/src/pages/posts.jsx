@@ -39,11 +39,15 @@ class Posts extends Component {
   };
 
   handleShowAnswer = questionObj => {
-    this.setState({ showAnswer: questionObj });
+    if (questionObj == this.state.showAnswer) {
+      this.setState({ showAnswer: "" });
+    } else {
+      this.setState({ showAnswer: questionObj });
+    }
   };
 
   render() {
-    var { addNew, dashboard, questions } = this.state;
+    var { addNew, dashboard, questions, showAnswer } = this.state;
 
     return (
       <React.Fragment>
@@ -102,16 +106,16 @@ class Posts extends Component {
                   onClick={() => this.handleShowAnswer(each._id)}
                   class="btn btn-sm"
                 >
-                  <i class="fas fa-plus"></i>
+                  <i class={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
                 </button>
-                {this.state.showAnswer == each._id ? (
+                {showAnswer == each._id ? (
                   <Answer question={each._id} />
                 ) : (
                   <div></div>
                 )}
               </div>
               <div className="col-md-1">{each.user}</div>
-              <div className="col-md-1">{each.date}</div>
+              <div className="col-md-1">{each.formattedDate}</div>
             </div>
           ))}
         </div>
