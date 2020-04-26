@@ -3,8 +3,8 @@ import API from "../utils/API";
 
 class Answers extends Component {
   state = {
-    answers:[{}],
-    new: ''
+    answers: [{}],
+    new: ""
   };
 
   componentDidMount() {
@@ -23,16 +23,17 @@ class Answers extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    const questionID =this.props.question;
+    document.getElementById("inputArea").value = "";
+    const questionID = this.props.question;
 
     const today = new Date();
-    var date = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate();
+    var date =
+      today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
     const newAnswer = {
       question: questionID,
       answer: this.state.new,
       user: "Temp",
-      date: date
+      formattedDate: date
       //user is hardcoded for now
     };
 
@@ -43,41 +44,39 @@ class Answers extends Component {
 
   render() {
     return (
-        <React.Fragment>
-            <div className="answer_section">
-            <div class="mt-2">
+      <React.Fragment>
+        <div className="answer_section">
+          <div class="mt-2">
             {this.state.answers.map((each, index) => (
-            <div className="row section">
-            <div>{index + 1}</div>
-            <div className="col-md-9">
-              {each.answer}
-            </div>
-            <div className="col-md-1">{each.user}</div>
-            <div className="col-md-1">{each.date}</div>
-          </div>
+              <div className="row section">
+                <div>{index + 1}</div>
+                <div className="col-md-9">{each.answer}</div>
+                <div className="col-md-1">{each.user}</div>
+                <div className="col-md-1">{each.formattedDate}</div>
+              </div>
             ))}
             <form>
-                <div class="form-group">
+              <div class="form-group">
                 <textarea
-                    onChange={this.handleChange}
-                    class="form-control"
-                    id="inputArea"
-                    rows="3"
+                  onChange={this.handleChange}
+                  class="form-control"
+                  id="inputArea"
+                  rows="3"
                 ></textarea>
-                </div>
-                <button
-                onClick = {this.handleSubmit}
+              </div>
+              <button
+                onClick={this.handleSubmit}
                 type="submit"
                 class="btn btn-outline-primary btn-sm"
-                >
+              >
                 Enter Solution
-                </button>
+              </button>
             </form>
-            </div>
-            </div>
-        </React.Fragment>
+          </div>
+        </div>
+      </React.Fragment>
     );
- }
+  }
 }
 
 export default Answers;

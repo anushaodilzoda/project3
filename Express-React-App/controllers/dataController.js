@@ -34,7 +34,7 @@ module.exports = {
   //getting all answers for the requested question
   getAnswer: function(req, res){
     db.Answer.find({ question: req.query.question })
-        .sort({ date: -1 })
+        .sort({ date: 1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
