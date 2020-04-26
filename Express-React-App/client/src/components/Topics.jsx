@@ -69,11 +69,7 @@ class Topics extends Component {
               }}
               class="m-2"
               key={topic._id}
-            >
-
-             
-             <button type="submit" style={{marginRight: 20}} class="btn btn-light mb-2 border">
-              <img style={{height: 150}} src={icon.data[("_"+topic.topic).toLowerCase()] ? (icon.data[("_"+topic.topic).toLowerCase()]) : "https://pluspng.com/img-png/png-smiling-face-smiley-20face-20png-1023.png"}></img>
+          >             
 
               <button
                 type="submit"
