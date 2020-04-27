@@ -24,6 +24,7 @@ class Answers extends Component {
   handleSubmit = event => {
     event.preventDefault();
     document.getElementById("inputArea").value = "";
+    
     const questionID = this.props.question;
 
     const today = new Date();

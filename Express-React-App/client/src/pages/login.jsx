@@ -36,6 +36,7 @@ class Login extends Component {
     }
     return (
       <div className="wrapper">
+        <div className="logo"></div>
         <div className="text">Login</div>
         <form onSubmit={this.handleFormSubmit} style={{ width: 350 }}>
           <Input onChange={this.handleEmailChange} name="email" placeholder="Email" />

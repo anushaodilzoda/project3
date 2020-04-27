@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
-import NewInput from "../components/newInput";
+import NewInput from "../components/question";
 import Search from "../components/search";
 import API from "../utils/API";
 import Navbar from "../components/navbar";
@@ -22,7 +22,7 @@ class Posts extends Component {
 
   loadQuestions = dashboard => {
     API.populateDashboard(dashboard)
-      .then(res => this.setState({ questions: res.data }))
+      .then(res => ( this.setState({ questions: res.data })))
       .catch(err => console.log(err));
   };
 
@@ -45,6 +45,7 @@ class Posts extends Component {
       this.setState({ showAnswer: questionObj });
     }
   };
+
 
   render() {
     var { addNew, dashboard, questions, showAnswer } = this.state;
@@ -91,16 +92,16 @@ class Posts extends Component {
           {/* table header */}
           <div className="row table-header">
             <div className="col-md-1">#</div>
-            <div className="col-md-9">Questions</div>
-            <div className="col-md-1">User</div>
-            <div className="col-md-1">Date</div>
+            <div className="col-md-10">Questions</div>
+            <div className="col-md-1">Answers</div>
+
           </div>
           {/* table body */}
 
           {questions.map((each, index) => (
             <div className="row question-section">
               <div className="col-md-1">{index + 1}</div>
-              <div className="col-md-9">
+              <div className="col-md-10">
                 {each.question}
                 <button
                   onClick={() => this.handleShowAnswer(each._id)}
@@ -114,12 +115,11 @@ class Posts extends Component {
                   <div></div>
                 )}
               </div>
-              <div className="col-md-1">{each.user}</div>
-              <div className="col-md-1">{each.formattedDate}</div>
+              <div className="col-md-1">{each.answer}</div>
             </div>
           ))}
         </div>
-      </React.Fragment>
+        </React.Fragment>
     );
   }
 }

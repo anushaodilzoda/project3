@@ -1,33 +1,19 @@
-.App {
-  text-align: center;
+/* logo style */
+.logo {
+  background-image: url("./files/Logo.png");
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper .logo{
+  margin-left: 40%;
+  margin-bottom: 15px;
 }
 
 /* Home Page style */
+
 .content {
   margin: 50px 100px;
 }
@@ -39,7 +25,7 @@ img {
 }
 .border {
   font-weight: bold;
-  margin-bottom: .5rem!important;
+  margin-bottom: 0.5rem !important;
   border: 7px solid lightblue !important;
 }
 
@@ -49,14 +35,14 @@ img {
 /* Home Page end */
 
 /* Posts Page style */
-.dash-header{
+.dash-header {
   margin-bottom: 60px !important;
 }
-.newbtn{
+.newbtn {
   height: 35px;
   margin: 9px 0px 0px 20px;
 }
-.filter{
+.filter {
   margin-left: 30%;
 }
 .entry {
@@ -68,31 +54,27 @@ img {
   font-weight: bold;
   margin: 40px 0px;
 }
-.question-section{
+.question-section {
   padding-top: 10px;
-  
 }
 /* Posts Page end */
 
-
-
 /* Login an Signup pages */
 
-.wrapper{
+.wrapper {
   display: block;
   position: relative;
   margin: 0 auto 0;
-  padding: 200px 20px 0 0px;
+  padding: 150px 20px 0 0px;
   width: 340px;
   text-align: left;
 }
-.wrapper button{
+
+.wrapper button {
   width: 100%;
 }
-.wrapper .text{
+.wrapper .text {
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
 }
-
-

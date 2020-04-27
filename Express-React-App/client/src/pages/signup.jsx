@@ -36,6 +36,7 @@ export function Signup() {
 
   return (
     <div className="wrapper">
+      <div className="logo"></div>
       <div className="text">Sign Up</div>
       <form onSubmit={handleFormSubmit}  style={{ width: 350 }}>
         <Input onChange={handleInputChange} name="name" placeholder="Name" />

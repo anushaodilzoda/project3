@@ -8,7 +8,7 @@ class Navbar extends Component {
     return (
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <Link class="navbar-brand" to="/">
-          Home
+          <div className="logo"></div>
         </Link>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

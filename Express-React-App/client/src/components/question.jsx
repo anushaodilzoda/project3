@@ -15,13 +15,10 @@ class NewInput extends Component {
     event.target.reset();
     
     const { dashboard, parentMethod } = this.props;
-    const today = new Date();
-    var date = today.getFullYear()+"-"+today.getMonth()+"-"+today.getDate();
     const newQuestion = {
       topic: dashboard,
       question: this.state.question,
-      user: "Temp",
-      formattedDate: date
+      user: "Temp"
       //topic and user are hardcoded for now
     };
     API.saveQuestion(newQuestion)

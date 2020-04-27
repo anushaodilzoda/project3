@@ -24,11 +24,19 @@ module.exports = {
     }
   },
 
-  //posting new Answer
+  //posting new Answer 
   saveAnswer: function(req, res){
     db.Answer.create(req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
+
+//incrementing answer count for the question
+    console.log(req.body.question);
+    db.Question.update(
+      {_id: req.body.question},
+      {$inc: {answer: 1}}
+    )
+    .then(dbModel => console.log(dbModel))
   },
 
   //getting all answers for the requested question

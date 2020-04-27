@@ -12,12 +12,12 @@ const dataSchema = new Schema({
     required: true
   },
 
-  user: {
-    type: String,
-    required: true
+  answer: {
+    type: Number,
+    default: 0
   },
 
-  formattedDate: {
+  user: {
     type: String,
     required: true
   },
