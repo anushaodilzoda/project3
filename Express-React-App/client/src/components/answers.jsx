@@ -46,10 +46,9 @@ class Answers extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="answer_section">
-          <div class="mt-2">
+        <div className="answer-section">
             {this.state.answers.map((each, index) => (
-              <div className="row section">
+              <div className="row answer">
                 <div>{index + 1}</div>
                 <div className="col-md-9">{each.answer}</div>
                 <div className="col-md-1">{each.user}</div>
@@ -63,6 +62,7 @@ class Answers extends Component {
                   class="form-control"
                   id="inputArea"
                   rows="3"
+                  placeholder="Your Answer..."
                 ></textarea>
               </div>
               <button
@@ -70,10 +70,9 @@ class Answers extends Component {
                 type="submit"
                 class="btn btn-outline-primary btn-sm"
               >
-                Enter Solution
+                Post Your Answer
               </button>
             </form>
-          </div>
         </div>
       </React.Fragment>
     );

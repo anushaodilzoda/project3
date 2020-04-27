@@ -53,13 +53,13 @@ class Posts extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <div className="content">
+        <div className="dashboard-content ">
           <div className="row dash-header">
             <h1>{dashboard}</h1>
             {dashboard != "All Topics" ? (
               <button
                 onClick={this.toggle}
-                className="btn btn-dark badge-pill newbtn"
+                className="btn btn-secondary badge-pill newbtn"
               >
                 {addNew == false ? "Add " : "Hide "}{" "}
                 <i class="fas fa-question-circle"></i>
@@ -89,17 +89,11 @@ class Posts extends Component {
               Show all
             </button>
           </form>
-          {/* table header */}
-          <div className="row table-header">
-            <div className="col-md-1">#</div>
-            <div className="col-md-10">Questions</div>
-            <div className="col-md-1">Answers</div>
 
-          </div>
           {/* table body */}
 
           {questions.map((each, index) => (
-            <div className="row question-section">
+            <div className="row question-section shadow-sm">
               <div className="col-md-1">{index + 1}</div>
               <div className="col-md-10">
                 {each.question}

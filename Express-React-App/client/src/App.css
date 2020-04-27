@@ -1,3 +1,12 @@
+body {
+  font-size: 20px;
+  background-color: #f8f9fa;
+  font-family: sans-serif !important;
+}
+
+.navbar {
+  background-color: #62b5ce !important;
+}
 /* logo style */
 .logo {
   background-image: url("./files/Logo.png");
@@ -7,7 +16,7 @@
   background-size: contain;
 }
 
-.wrapper .logo{
+.wrapper .logo {
   margin-left: 40%;
   margin-bottom: 15px;
 }
@@ -16,6 +25,13 @@
 
 .content {
   margin: 50px 100px;
+}
+
+.dashboard-content {
+  background-color: #e3e4e44d;
+  margin: 50px 200px;
+  padding: 30px 50px;
+  color: #1b3d63;
 }
 
 img {
@@ -29,7 +45,7 @@ img {
   border: 7px solid lightblue !important;
 }
 
-.newDashboard{
+.newDashboard {
   border: 3px solid lightblue !important;
 }
 /* Home Page end */
@@ -44,19 +60,38 @@ img {
 }
 .filter {
   margin-left: 30%;
+  margin-bottom: 70px;
 }
 .entry {
   padding-bottom: 30px;
   color: blue;
 }
-.table-header div {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 40px 0px;
-}
+
 .question-section {
-  padding-top: 10px;
+  padding: 10px 0px;
+  background-color: white;
+  margin: 10px 0px 15px 10px;
+  border-radius: 10px;
 }
+
+.answer-section {
+  margin-top: 30px;
+}
+.answer {
+  font-size: 17px;
+  padding: 10px 10px;
+  background-color: #efefef;
+  margin: 10px 0px 15px 10px;
+}
+
+.answer .col-md-1 {
+  font-size: 13px;
+}
+
+.answer-section form {
+  margin: 70px 0px 10px 0px;
+}
+
 /* Posts Page end */
 
 /* Login an Signup pages */

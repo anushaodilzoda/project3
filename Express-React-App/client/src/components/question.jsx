@@ -36,11 +36,10 @@ class NewInput extends Component {
           <input
             onChange={this.handleChange}
             className="form-control"
-            id="exampleFormControlTextarea1"
             rows="1"
             name="question"
             // placeholder="Enter new question"
-            style={{borderRadius: 25, border: '1px solid #8a8585e0'}}
+            style={{borderRadius: 20}}
           ></input>
         </div>
         <div class="col-sm-2">
