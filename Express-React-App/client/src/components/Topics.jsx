@@ -51,7 +51,7 @@ class Topics extends Component {
             <button
               type="submit"
               style={{ marginRight: 20 }}
-              class="btn btn-light mb-2 border"
+              class="btn btn-light mb-2 border shadow-lg p-3 mb-5 bg-white rounded"
             >
               <img
                 style={{ height: 150 }}
@@ -71,7 +71,7 @@ class Topics extends Component {
             <button
               type="submit"
               style={{ marginRight: 20 }}
-              class="btn btn-light mb-2 border"
+              class="btn btn-light mb-2 border shadow-lg p-3 mb-5 bg-white rounded"
             >
               <img
               style={{ height: 150 }}
@@ -97,7 +97,7 @@ class Topics extends Component {
               <button
                 type="submit"
                 style={{ marginRight: 20 }}
-                class="btn btn-light mb-2 border"
+                class="btn btn-light mb-2 border shadow-lg p-3 mb-5 bg-white rounded"
               >
                 <img
                   style={{ height: 150 }}
