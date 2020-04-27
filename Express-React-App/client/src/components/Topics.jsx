@@ -69,7 +69,8 @@ class Topics extends Component {
               }}
               class="m-2"
               key={topic._id}
-            >
+          >             
+
               <button
                 type="submit"
                 style={{ marginRight: 20 }}
@@ -83,6 +84,7 @@ class Topics extends Component {
                       : "https://static.vecteezy.com/system/resources/previews/000/589/510/non_2x/vector-happy-emoji-icon.jpg"
                   }
                 ></img>
+
                 {topic.topic}
               </button>
             </Link>
@@ -90,13 +92,14 @@ class Topics extends Component {
         </form>
         <form onSubmit={this.handleAdd} className="form-inline">
           {/* New Dashboard input */}
-          <div class="form-group mx-sm-2 mb-2">
+          <div class="form-group mx-sm-2 mb-2  border">
             <input
               onChange={this.handleInputChange}
               type="text"
               class="form-control"
               placeholder="New dashboard"
               style={{ width: 200 }}
+             
             ></input>
           </div>
           <button type="submit" class="btn btn-primary mb-2">
