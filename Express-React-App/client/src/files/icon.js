@@ -20,7 +20,6 @@ var data = {
   _angular:"https://img.icons8.com/color/150/000000/angularjs.png",
   _express:"https://png.pngtree.com/svg/20161010/ex_968069.png",
   _jquery:"https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/jquery-512.png",
-  _codechallenge:"https://i.ya-webdesign.com/images/computer-programming-png-1.png",
   _softskill:"https://thestempedia.com/wp-content/uploads/2019/05/21st-Century-Skill-Icons-05.png",
 
 

@@ -60,6 +60,29 @@ class Topics extends Component {
               All Topics
             </button>
           </Link>
+
+          <Link
+            to={{
+              pathname: "/dashboard",
+              state: { dashboard: "Coding Challenges" }
+            }}
+            class="m-2"
+          >
+            <button
+              type="submit"
+              style={{ marginRight: 20 }}
+              class="btn btn-light mb-2 border"
+            >
+              <img
+              style={{ height: 150 }}
+                src="https://i.ya-webdesign.com/images/computer-programming-png-1.png"
+              />
+              Coding Challenges
+            </button>
+          </Link>
+
+
+
           {/* Fetching and Displaying all topics in the Home page */}
           {this.state.topics.map(topic => (
             <Link
@@ -92,7 +115,7 @@ class Topics extends Component {
         </form>
         <form onSubmit={this.handleAdd} className="form-inline">
           {/* New Dashboard input */}
-          <div class="form-group mx-sm-2 mb-2  border">
+          <div class="form-group mx-sm-2 mb-2  newDashboard">
             <input
               onChange={this.handleInputChange}
               type="text"
