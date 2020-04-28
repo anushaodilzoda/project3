@@ -6,7 +6,7 @@ import icon from "../files/icon";
 class Topics extends Component {
   state = {
     topics: [{}],
-    newTopic: ""
+    newTopic: "",
   };
 
   componentDidMount() {
@@ -15,24 +15,24 @@ class Topics extends Component {
 
   loadTopics = () => {
     API.getTopics()
-      .then(res => this.setState({ topics: res.data }))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ topics: res.data }))
+      .catch((err) => console.log(err));
   };
 
-  handleAdd = event => {
+  handleAdd = (event) => {
     event.preventDefault();
     event.target.reset();
 
     API.saveTopic({
       topic: this.state.newTopic,
-      user: "Temp"
+      user: "Temp",
       // user is hardcoded for now
     })
-      .then(res => this.loadTopics())
-      .catch(err => console.log(err));
+      .then((res) => this.loadTopics())
+      .catch((err) => console.log(err));
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     this.setState({ newTopic: event.target.value });
   };
 
@@ -44,7 +44,7 @@ class Topics extends Component {
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "All Topics" }
+              state: { dashboard: "All Topics" },
             }}
             class="m-2"
           >
@@ -53,10 +53,7 @@ class Topics extends Component {
               style={{ marginRight: 20 }}
               class="btn btn-light mb-2 border shadow-lg bg-white rounded"
             >
-              <img
-                style={{ height: 150 }}
-                src="https://www.indiaeducation.net/imagesvr_ce/1375/full%20stack%20developer.JPG"
-              />
+              <img style={{ height: 150 }} src={icon.data._alltopics} />
               All Topics
             </button>
           </Link>
@@ -64,7 +61,7 @@ class Topics extends Component {
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "Coding Challenges" }
+              state: { dashboard: "Coding Challenges" },
             }}
             class="m-2"
           >
@@ -74,8 +71,9 @@ class Topics extends Component {
               class="btn btn-light mb-2 border shadow-lg bg-white rounded"
             >
               <img
-              style={{ height: 150 }}
-                src="https://i.ya-webdesign.com/images/computer-programming-png-1.png"
+                className="codeChallengeImg"
+                style={{ height: 150 }}
+                src={icon.data._codingchallenges}
               />
               Coding Challenges
             </button>
@@ -84,7 +82,7 @@ class Topics extends Component {
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "Softskill" }
+              state: { dashboard: "Softskill" },
             }}
             class="m-2"
           >
@@ -93,26 +91,21 @@ class Topics extends Component {
               style={{ marginRight: 20 }}
               class="btn btn-light mb-2 border shadow-lg bg-white rounded"
             >
-              <img
-              style={{ height: 150 }}
-                src="https://blog.edmentum.com/sites/blog.edmentum.com/files/images/SoftSkills.png"
-              />
+              <img style={{ height: 150 }} src={icon.data._softskills} />
               Soft skills
             </button>
           </Link>
 
-
           {/* Fetching and Displaying all topics in the Home page */}
-          {this.state.topics.map(topic => (
+          {this.state.topics.map((topic) => (
             <Link
               to={{
                 pathname: "/dashboard",
-                state: { dashboard: topic.topic }
+                state: { dashboard: topic.topic },
               }}
               class="m-2"
               key={topic._id}
-          >             
-
+            >
               <button
                 type="submit"
                 style={{ marginRight: 20 }}
@@ -141,7 +134,6 @@ class Topics extends Component {
               class="form-control"
               placeholder="New dashboard"
               style={{ width: 200 }}
-             
             ></input>
           </div>
           <button type="submit" class="btn btn-primary mb-2">

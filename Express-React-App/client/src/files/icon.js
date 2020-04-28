@@ -2,6 +2,9 @@
   
 
 var data = {
+  _codingchallenges:"https://us.123rf.com/450wm/lembergvector/lembergvector1611/lembergvector161100265/68694825-man-programmer-hands-working-on-his-pc-computer-coding-and-programming-head-monitor-view-vector-illu.jpg?ver=6",
+  _softskills:"https://blog.edmentum.com/sites/blog.edmentum.com/files/images/SoftSkills.png",
+ _alltopics:"https://www.indiaeducation.net/imagesvr_ce/1375/full%20stack%20developer.JPG",
   _java: "https://img.icons8.com/color/150/000000/java-coffee-cup-logo.png",
   _react: "https://img.icons8.com/color/150/000000/react-native.png",
   _reactjs: "https://img.icons8.com/color/150/000000/react-native.png",
@@ -20,8 +23,6 @@ var data = {
   _angular:"https://img.icons8.com/color/150/000000/angularjs.png",
   _express:"https://png.pngtree.com/svg/20161010/ex_968069.png",
   _jquery:"https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/jquery-512.png",
-
-
 
 }
 
