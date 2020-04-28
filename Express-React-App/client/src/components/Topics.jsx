@@ -6,7 +6,7 @@ import icon from "../files/icon";
 class Topics extends Component {
   state = {
     topics: [{}],
-    newTopic: "",
+    newTopic: ""
   };
 
   componentDidMount() {
@@ -15,24 +15,24 @@ class Topics extends Component {
 
   loadTopics = () => {
     API.getTopics()
-      .then((res) => this.setState({ topics: res.data }))
-      .catch((err) => console.log(err));
+      .then(res => this.setState({ topics: res.data }))
+      .catch(err => console.log(err));
   };
 
-  handleAdd = (event) => {
+  handleAdd = event => {
     event.preventDefault();
     event.target.reset();
 
     API.saveTopic({
       topic: this.state.newTopic,
-      user: "Temp",
+      user: "Temp"
       // user is hardcoded for now
     })
-      .then((res) => this.loadTopics())
-      .catch((err) => console.log(err));
+      .then(res => this.loadTopics())
+      .catch(err => console.log(err));
   };
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     this.setState({ newTopic: event.target.value });
   };
 
@@ -44,7 +44,7 @@ class Topics extends Component {
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "All Topics" },
+              state: { dashboard: "All Topics" }
             }}
             class="m-2"
           >
@@ -61,7 +61,7 @@ class Topics extends Component {
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "Coding Challenges" },
+              state: { dashboard: "Coding" }
             }}
             class="m-2"
           >
@@ -73,16 +73,16 @@ class Topics extends Component {
               <img
                 className="codeChallengeImg"
                 style={{ height: 150 }}
-                src={icon.data._codingchallenges}
+                src={icon.data._coding}
               />
-              Coding Challenges
+              Coding
             </button>
           </Link>
 
           <Link
             to={{
               pathname: "/dashboard",
-              state: { dashboard: "Softskill" },
+              state: { dashboard: "Softskill" }
             }}
             class="m-2"
           >
@@ -97,11 +97,11 @@ class Topics extends Component {
           </Link>
 
           {/* Fetching and Displaying all topics in the Home page */}
-          {this.state.topics.map((topic) => (
+          {this.state.topics.map(topic => (
             <Link
               to={{
                 pathname: "/dashboard",
-                state: { dashboard: topic.topic },
+                state: { dashboard: topic.topic }
               }}
               class="m-2"
               key={topic._id}
