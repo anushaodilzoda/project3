@@ -13,6 +13,9 @@ router.route("/Answer")
   .get(dataController.getAnswer)
   .post(dataController.saveAnswer)
 
+router.route("/like/:answerID")
+  .post(dataController.addLike)
+
 //Matches with "/api/Topic"
 router.route("/Topic")
   .get(dataController.getTopics)

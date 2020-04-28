@@ -20,6 +20,10 @@ export default {
     return axios.get("/api/Answer", {params: {question: question}})
   },
 
+  addLike: function(answerID){
+    return axios.post("api/like/"+answerID)
+  },
+
   saveTopic: function(newTopicObj){
     return axios.post("/api/Topic", newTopicObj);
   },

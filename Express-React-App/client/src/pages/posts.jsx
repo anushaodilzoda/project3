@@ -22,7 +22,7 @@ class Posts extends Component {
 
   loadQuestions = dashboard => {
     API.populateDashboard(dashboard)
-      .then(res => ( this.setState({ questions: res.data })))
+      .then(res => this.setState({ questions: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -45,7 +45,6 @@ class Posts extends Component {
       this.setState({ showAnswer: questionObj });
     }
   };
-
 
   render() {
     var { addNew, dashboard, questions, showAnswer } = this.state;
@@ -101,7 +100,11 @@ class Posts extends Component {
                   onClick={() => this.handleShowAnswer(each._id)}
                   class="btn btn-sm"
                 >
-                  <i class={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
+                  <i
+                    class={
+                      showAnswer == each._id ? "fas fa-minus" : "fas fa-plus"
+                    }
+                  ></i>
                 </button>
                 {showAnswer == each._id ? (
                   <Answer question={each._id} />
@@ -113,7 +116,7 @@ class Posts extends Component {
             </div>
           ))}
         </div>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 }

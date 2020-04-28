@@ -47,6 +47,15 @@ module.exports = {
         .catch(err => res.status(422).json(err));
   },
 
+  addLike: function(req, res){
+    db.Answer.update(
+      {_id: req.params.answerID},
+      {$inc: {like: 1}}
+    )
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
   //posting new topic
   createTopic: function(req, res) {
     db.Topic.create(req.body)

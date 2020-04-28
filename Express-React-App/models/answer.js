@@ -12,6 +12,11 @@ const dataSchema = new Schema({
     required: true
   },
 
+  like: {
+    type: Number,
+    default: 0
+  },
+  
   user: {
     type: String,
     required: true

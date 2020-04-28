@@ -84,8 +84,9 @@ img {
   margin: 10px 0px 15px 10px;
 }
 
-.answer .col-md-1 {
+.answer-date {
   font-size: 13px;
+  color: gray;
 }
 
 .answer-section form {
