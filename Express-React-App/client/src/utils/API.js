@@ -2,60 +2,66 @@ import axios from "axios";
 
 export default {
   //Get questions
-  populateDashboard: function(req){
-    return axios.get("api/dashboard/"+req);
+  populateDashboard: function (req) {
+    return axios.get("api/dashboard/" + req);
   },
 
   //Post new question
-  saveQuestion: function(newQuestionObj) {
+  saveQuestion: function (newQuestionObj) {
     return axios.post("/api/Question", newQuestionObj);
   },
 
   //Save answer
-  saveAnswer: function(newAnswerObj){
+  saveAnswer: function (newAnswerObj) {
     return axios.post("/api/Answer", newAnswerObj);
   },
 
-  getAnswers: function(question){
-    return axios.get("/api/Answer", {params: {question: question}})
+  getAnswers: function (question) {
+    return axios.get("/api/Answer", { params: { question: question } });
   },
 
-  addLike: function(answerID){
-    return axios.post("api/like/"+answerID)
+  addLike: function (answerID) {
+    return axios.post("api/like/" + answerID);
   },
 
-  saveTopic: function(newTopicObj){
+  saveTopic: function (newTopicObj) {
     return axios.post("/api/Topic", newTopicObj);
   },
 
-  getTopics: function(){
+  getTopics: function () {
     return axios.get("/api/Topic");
   },
 
-  search: function(searchPramObj){
-    return axios.get("api/search", {params: searchPramObj});
+  search: function (searchPramObj) {
+    return axios.get("api/search", { params: searchPramObj });
   },
 
   //Signin and signup users
 
-  signup: function(userInput){
+  signup: function (userInput) {
     return axios.post("api/newUserSignup", userInput);
   },
 
-  login: function(userInput){
+  login: function (userInput) {
     return axios.post("api/userLogin", userInput);
   },
 
   //Enter Do Don't
-  addDo: function(userInput){
+  addDo: function (userInput) {
     return axios.post("api/do", userInput);
   },
 
-  getAllDo: function(){
+  getAllDo: function () {
     return axios.get("api/do");
-  }
+  },
 
-  
+  addDont: function (userInput) {
+    return axios.post("api/dont", userInput);
+  },
+
+  getAllDont: function () {
+    return axios.get("api/dont");
+  },
 
   // // Gets all books
   // getBooks: function() {

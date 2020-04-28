@@ -4,7 +4,6 @@ import Topics from "../components/Topics";
 import Navbar from "../components/navbar";
 import DoAndDonts from "../components/DoAndDonts";
 
-
 class Home extends Component {
   state = {};
 
@@ -15,9 +14,8 @@ class Home extends Component {
         <div className="content">
           <h2>Home</h2>
           <Topics />
-        
-          <DoAndDonts/>
-        
+
+          <DoAndDonts />
         </div>
       </React.Fragment>
     );
