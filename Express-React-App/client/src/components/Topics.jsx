@@ -81,6 +81,25 @@ class Topics extends Component {
             </button>
           </Link>
 
+          <Link
+            to={{
+              pathname: "/dashboard",
+              state: { dashboard: "Softskill" }
+            }}
+            class="m-2"
+          >
+            <button
+              type="submit"
+              style={{ marginRight: 20 }}
+              class="btn btn-light mb-2 border shadow-lg bg-white rounded"
+            >
+              <img
+              style={{ height: 150 }}
+                src="https://blog.edmentum.com/sites/blog.edmentum.com/files/images/SoftSkills.png"
+              />
+              Soft skills
+            </button>
+          </Link>
 
 
           {/* Fetching and Displaying all topics in the Home page */}
