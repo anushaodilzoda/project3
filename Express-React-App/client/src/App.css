@@ -27,6 +27,10 @@ body {
   margin: 50px 100px;
 }
 
+.DoAndDontsContent {
+  margin: 50px 280px 100px 100px;
+}
+
 .dashboard-content {
   background-color: #e3e4e44d;
   margin: 50px 200px;
@@ -39,6 +43,11 @@ img {
   border-style: none;
   display: block;
 }
+
+.codeChallengeImg {
+  width: 150px;
+  height: 150px;
+}
 .border {
   font-weight: bold;
   margin-bottom: 0.5rem !important;
@@ -47,6 +56,12 @@ img {
 
 .newDashboard {
   border: 3px solid lightblue !important;
+}
+.anyClass {
+  height: 150px;
+  overflow-y: scroll;
+  border: 3px solid lightblue !important;
+  height: 700px;
 }
 /* Home Page end */
 

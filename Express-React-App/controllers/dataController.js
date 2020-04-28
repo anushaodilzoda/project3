@@ -89,7 +89,24 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
-  }
+  },
+
+      //adding new Do
+      addDo: function(req, res){
+        console.log("in the server: ");
+        console.log(req.body);
+         db.Dodun.create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+      },
+
+      //getting all Do.s
+      getAllDo: function(req, res){
+        db.Dodun.find({ type: "Do" })
+        .sort({ date: 1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      }
 
   // findAll: function(req, res) {
   //   db.Employee.find(req.query)

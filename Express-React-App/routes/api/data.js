@@ -25,6 +25,10 @@ router.route("/Topic")
 router.route("/search")
   .get(dataController.search);
 
+router.route("/do")
+  .post(dataController.addDo)
+  .get(dataController.getAllDo)
+
 //   // Matches with "/api/search/:keyword"
 //   router
 //   .route("/:keyword")

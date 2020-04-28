@@ -3,4 +3,5 @@ module.exports = {
   Answer: require("./answer"),
   Topic: require("./topic"),
   User: require("./User"),
+  Dodun: require("./dodun"),
 };

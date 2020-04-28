@@ -46,6 +46,15 @@ export default {
     return axios.post("api/userLogin", userInput);
   },
 
+  //Enter Do Don't
+  addDo: function(userInput){
+    return axios.post("api/do", userInput);
+  },
+
+  getAllDo: function(){
+    return axios.get("api/do");
+  }
+
   
 
   // // Gets all books
