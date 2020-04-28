@@ -68,7 +68,7 @@ class Answers extends Component {
               <button
                 onClick={this.handleSubmit}
                 type="submit"
-                class="btn btn-outline-primary btn-sm"
+                class="btn btn-outline-dark btn-sm"
               >
                 Post Your Answer
               </button>

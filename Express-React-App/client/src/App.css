@@ -42,7 +42,7 @@ img {
 .border {
   font-weight: bold;
   margin-bottom: 0.5rem !important;
-  border: 7px solid lightblue !important;
+  border: 5px solid lightblue !important;
 }
 
 .newDashboard {
