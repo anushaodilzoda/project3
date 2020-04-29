@@ -30,9 +30,9 @@ class NewInput extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        class="form-row align-items-center new-entry m-1"
+        className="form-row align-items-center new-entry m-1"
       >
-        <div class="col-sm-10 my-2">
+        <div className="col-sm-10 my-2">
           <input
             onChange={this.handleChange}
             className="form-control"
@@ -42,9 +42,9 @@ class NewInput extends Component {
             style={{borderRadius: 20}}
           ></input>
         </div>
-        <div class="col-sm-2">
-          <button type="submit" class="btn badge-pill btn-primary">
-            Enter new <i class="fas fa-question-circle"></i>
+        <div className="col-sm-2">
+          <button type="submit" className="btn badge-pill btn-primary">
+            Enter new <i className="fas fa-question-circle"></i>
           </button>
         </div>
       </form>

@@ -39,19 +39,19 @@ class Topics extends Component {
   render() {
     return (
       <div className="content">
-        <form class="form-inline">
+        <form className="form-inline">
           {/* Default All Topic link */}
           <Link
             to={{
               pathname: "/dashboard",
               state: { dashboard: "All Topics" }
             }}
-            class="m-2"
+            className="m-2"
           >
             <button
               type="submit"
               style={{ marginRight: 20 }}
-              class="btn btn-light mb-2 border shadow-lg bg-white rounded"
+              className="btn btn-light mb-2 border shadow-lg rounded"
             >
               <img style={{ height: 150 }} src={icon.data._alltopics} />
               All Topics
@@ -63,12 +63,12 @@ class Topics extends Component {
               pathname: "/dashboard",
               state: { dashboard: "Coding" }
             }}
-            class="m-2"
+            className="m-2"
           >
             <button
               type="submit"
               style={{ marginRight: 20 }}
-              class="btn btn-light mb-2 border shadow-lg bg-white rounded"
+              className="btn btn-light mb-2 border shadow-lg rounded"
             >
               <img
                 className="codeChallengeImg"
@@ -84,12 +84,12 @@ class Topics extends Component {
               pathname: "/dashboard",
               state: { dashboard: "Softskill" }
             }}
-            class="m-2"
+            className="m-2"
           >
             <button
               type="submit"
               style={{ marginRight: 20 }}
-              class="btn btn-light mb-2 border shadow-lg bg-white rounded"
+              className="btn btn-light mb-2 border shadow-lg rounded"
             >
               <img style={{ height: 150 }} src={icon.data._softskills} />
               Soft skills
@@ -103,13 +103,13 @@ class Topics extends Component {
                 pathname: "/dashboard",
                 state: { dashboard: topic.topic }
               }}
-              class="m-2"
+              className="m-2"
               key={topic._id}
             >
               <button
                 type="submit"
                 style={{ marginRight: 20 }}
-                class="btn btn-light mb-2 border shadow-lg bg-white rounded"
+                className="btn btn-light mb-2 border shadow-lg rounded"
               >
                 <img
                   style={{ height: 150 }}
@@ -127,16 +127,16 @@ class Topics extends Component {
         </form>
         <form onSubmit={this.handleAdd} className="form-inline">
           {/* New Dashboard input */}
-          <div class="form-group mx-sm-2 mb-2  newDashboard">
+          <div className="form-group mx-sm-2 mb-2  newDashboard">
             <input
               onChange={this.handleInputChange}
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="New dashboard"
               style={{ width: 200 }}
             ></input>
           </div>
-          <button type="submit" class="btn btn-primary mb-2">
+          <button type="submit" className="btn btn-primary mb-2">
             + Add
           </button>
         </form>

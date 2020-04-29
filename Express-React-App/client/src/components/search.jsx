@@ -31,7 +31,7 @@ class Search extends Component {
           name="search"
         ></input>
         <button className="btn btn-primary" type="submit">
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         </button>
       </form>
     );

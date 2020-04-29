@@ -51,7 +51,7 @@ class Posts extends Component {
     var { addNew, dashboard, questions, showAnswer } = this.state;
 
     return (
-      <React.Fragment>
+      <div className="post-page">
         <Navbar />
         <div className="dashboard-content ">
           <div className="row dash-header">
@@ -62,7 +62,7 @@ class Posts extends Component {
                 className="btn btn-secondary badge-pill newbtn"
               >
                 {addNew == false ? "Add " : "Hide "}{" "}
-                <i class="fas fa-question-circle"></i>
+                <i className="fas fa-question-circle"></i>
               </button>
             ) : (
               <div></div>
@@ -84,7 +84,7 @@ class Posts extends Component {
             <button
               onClick={this.reload}
               type="button"
-              class="btn btn-outline-primary m-2"
+              className="btn btn-outline-primary m-2"
             >
               Show all
             </button>
@@ -99,9 +99,9 @@ class Posts extends Component {
                 {each.question}
                 <button
                   onClick={() => this.handleShowAnswer(each._id)}
-                  class="btn btn-sm"
+                  className="btn btn-sm"
                 >
-                  <i class={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
+                  <i className={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
                 </button>
                 {showAnswer == each._id ? (
                   <Answer question={each._id} />
@@ -113,7 +113,7 @@ class Posts extends Component {
             </div>
           ))}
         </div>
-        </React.Fragment>
+        </div>
     );
   }
 }

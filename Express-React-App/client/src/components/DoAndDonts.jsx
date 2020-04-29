@@ -61,14 +61,14 @@ class DoAndDonts extends Component {
 
   render() {
     return (
-      <div class="row DoAndDontsContent">
+      <div className="row DoAndDontsContent">
         {/* =============  Do */}
-        <div class=" col-md-6">
+        <div className=" col-md-6">
           <form>
-            <div class="form-group">
+            <div className="form-group">
               <textarea
                 onChange={this.handleDoChange}
-                class="form-control"
+                className="form-control"
                 id="inputArea1"
                 rows="3"
                 placeholder="Your Input..."
@@ -77,21 +77,21 @@ class DoAndDonts extends Component {
             <button
               onClick={this.handleDoSubmit}
               type="submit"
-              class="btn btn-outline-dark btn-sm"
+              className="btn btn-outline-dark btn-sm"
             >
               Enter
             </button>
           </form>
 
-          <div class="anyClass">
+          <div className="anyClass">
             {this.state.allDo.map((each, index) => (
               <div className="row">
                 <div className="col-md-1">{index + 1 + "."}</div>
                 <div className="col-md-8">{each.text}</div>
                 <div className="col-md-2">
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fas fa-thumbs-up"></i>
-                    <span class="badge badge-light">{each.like}</span>
+                  <button type="button" className="btn btn-outline-primary">
+                    <i className="fas fa-thumbs-up"></i>
+                    <span className="badge badge-light">{each.like}</span>
                   </button>
                 </div>
               </div>
@@ -100,12 +100,12 @@ class DoAndDonts extends Component {
         </div>
 
         {/* =============  Don't */}
-        <div class=" col-md-6">
+        <div className=" col-md-6">
           <form>
-            <div class="form-group">
+            <div className="form-group">
               <textarea
                 onChange={this.handleDontChange}
-                class="form-control"
+                className="form-control"
                 id="inputArea2"
                 rows="3"
                 placeholder="Your Input..."
@@ -114,20 +114,20 @@ class DoAndDonts extends Component {
             <button
               onClick={this.handleDontSubmit}
               type="submit"
-              class="btn btn-outline-dark btn-sm"
+              className="btn btn-outline-dark btn-sm"
             >
               Enter
             </button>
           </form>
-          <div class="anyClass">
+          <div className="anyClass">
             {this.state.allDont.map((each, index) => (
               <div className="row">
                 <div className="col-md-1">{index + 1 + "."}</div>
                 <div className="col-md-8">{each.text}</div>
                 <div className="col-md-2">
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fas fa-thumbs-up"></i>
-                    <span class="badge badge-light">{each.like}</span>
+                  <button type="button" className="btn btn-outline-primary">
+                    <i className="fas fa-thumbs-up"></i>
+                    <span className="badge badge-light">{each.like}</span>
                   </button>
                 </div>
               </div>

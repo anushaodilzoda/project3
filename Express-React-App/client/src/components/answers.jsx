@@ -57,7 +57,7 @@ class Answers extends Component {
           {this.state.answers.map((each, index) => (
             <div className="row answer">
               <span>{index + 1 + "."}</span>
-              <div className="col-md-11">
+              <div className="col-md-10">
                 {each.answer}{" "}
                 <span className="answer-date">
                   {"(" + each.formattedDate + ")"}
@@ -66,19 +66,19 @@ class Answers extends Component {
               <div className="likes">
                 <button
                   onClick={() => this.handleLike(each._id)}
-                  class="btn btn-outline-primary"
+                  className="btn btn-outline-primary"
                 >
-                  <i class="far fa-thumbs-up"></i>{" "}
+                  <i className="far fa-thumbs-up"></i>{" "}
                   <span className="badge badge-primary">{each.like}</span>
                 </button>
               </div>
             </div>
           ))}
           <form>
-            <div class="form-group">
+            <div className="form-group">
               <textarea
                 onChange={this.handleChange}
-                class="form-control"
+                className="form-control"
                 id="inputArea"
                 rows="3"
                 placeholder="Your Answer..."
@@ -87,7 +87,7 @@ class Answers extends Component {
             <button
               onClick={this.handleSubmit}
               type="submit"
-              class="btn btn-outline-dark btn-sm"
+              className="btn btn-outline-dark btn-sm"
             >
               Post Your Answer
             </button>
