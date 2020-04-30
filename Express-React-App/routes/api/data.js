@@ -23,7 +23,8 @@ router
 router.route("/search").get(dataController.search);
 
 router.route("/do").post(dataController.addDo).get(dataController.getAllDo);
-
+router.route("/likeDo/:answerID").post(dataController.addLikeDo);
+router.route("/likeDont/:answerID").post(dataController.addLikeDont);
 router
   .route("/dont")
   .post(dataController.addDont)
