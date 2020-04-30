@@ -35,10 +35,12 @@ class Login extends Component {
       return <Redirect from="/login" to='/' />
     }
     return (
+      <div className="login">
       <div className="wrapper">
+        <div className="wrapper-box rounded">
         <div className="logo"></div>
-        <div className="text">Login</div>
-        <form onSubmit={this.handleFormSubmit} style={{ width: 350 }}>
+        <div className="text">DevPrepp</div>
+        <form onSubmit={this.handleFormSubmit}>
           <Input onChange={this.handleEmailChange} name="email" placeholder="Email" />
           <Input
             onChange={this.handlePassChange}
@@ -46,13 +48,19 @@ class Login extends Component {
             name="password"
             placeholder="Password"
           />
-          <button className="btn btn-primary mb-3" disabled={!(this.state.email && this.state.password)} type="submit">
+          <button className="btn btn-primary mb-4" disabled={!(this.state.email && this.state.password)} type="submit">
             Sign in
           </button>
         </form>
+        <div>
+        Don't have an account?  
+        </div>
         <Link to="/signup">
-          Create an account
+         Create an account
         </Link>
+       
+        </div>
+      </div>
       </div>
     );
   }

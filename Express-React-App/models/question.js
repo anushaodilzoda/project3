@@ -21,6 +21,11 @@ const dataSchema = new Schema({
     type: String,
     required: true
   },
+  
+  formattedDate: {
+    type: String,
+    required: true
+  },
 
   date: {
     type: Date,
