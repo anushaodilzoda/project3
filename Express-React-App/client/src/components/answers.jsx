@@ -5,7 +5,7 @@ import moment from "moment";
 class Answers extends Component {
   state = {
     answers: [{}],
-    new: ""
+    new: "",
   };
 
   componentDidMount() {
@@ -14,15 +14,15 @@ class Answers extends Component {
 
   loadAnswers = () => {
     API.getAnswers(this.props.question)
-      .then(res => this.setState({ answers: res.data }))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ answers: res.data }))
+      .catch((err) => console.log(err));
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ new: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     document.getElementById("inputArea").value = "";
 
@@ -37,14 +37,14 @@ class Answers extends Component {
     };
 
     API.saveAnswer(newAnswer)
-      .then(res => this.loadAnswers())
-      .catch(err => console.log(err));
+      .then((res) => this.loadAnswers())
+      .catch((err) => console.log(err));
   };
 
   handleLike(answerID) {
     API.addLike(answerID)
-      .then(res => this.loadAnswers())
-      .catch(err => console.log(err));
+      .then((res) => this.loadAnswers())
+      .catch((err) => console.log(err));
   }
 
   render() {

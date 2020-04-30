@@ -103,7 +103,11 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-
+  addLikeDo: function (req, res) {
+    db.Dodun.update({ _id: req.params.answerID }, { $inc: { like: 1 } })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
   //adding new Dont
   addDont: function (req, res) {
     console.log("in the server: ");
@@ -117,6 +121,11 @@ module.exports = {
   getAllDont: function (req, res) {
     db.Dodun.find({ type: "Dont" })
       .sort({ date: 1 })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
+  addLikeDont: function (req, res) {
+    db.Dodun.update({ _id: req.params.answerID }, { $inc: { like: 1 } })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

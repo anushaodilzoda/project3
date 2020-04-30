@@ -2,6 +2,7 @@ import axios from "axios";
 
 export default {
   //Get questions
+
   populateDashboard: function (req) {
     return axios.get("api/dashboard/" + req);
   },
@@ -54,13 +55,18 @@ export default {
   getAllDo: function () {
     return axios.get("api/do");
   },
-
+  addLike: function (answerID) {
+    return axios.post("api/likeDo/" + answerID);
+  },
   addDont: function (userInput) {
     return axios.post("api/dont", userInput);
   },
 
   getAllDont: function () {
     return axios.get("api/dont");
+  },
+  addLike: function (answerID) {
+    return axios.post("api/likeDont/" + answerID);
   },
 
   // // Gets all books

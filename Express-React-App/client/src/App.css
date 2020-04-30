@@ -67,6 +67,24 @@ img {
   overflow-y: scroll;
   border: 3px solid lightblue !important;
   height: 700px;
+  margin-top:20px;
+}
+.col-md-1{
+  margin-left:10px!important;
+}
+
+.like{
+  margin-top:10px;
+}
+.txt{
+  margin-top: 10px;
+}
+.odd{
+color: sienna;
+}
+
+.even{
+color: steelblue;
 }
 
 /* ........................................... */
