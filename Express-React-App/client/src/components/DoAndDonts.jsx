@@ -92,14 +92,22 @@ class DoAndDonts extends Component {
   render() {
     var { addNewDo } = this.state;
     var { addNewDont } = this.state;
-    var { color } = this.state;
+  
 
     return (
       <div className="row DoAndDontsContent">
         {/* =============  Do */}
         <div className=" col-md-6">
+        <button
+                onClick={this.toggle1}
+                className="btn btn-secondary badge-pill newbtn"
+              >
+                {addNewDont == false ? "Add do " : "Hide do"}{" "}
+                <i className="fas fa-question-circle"></i>
+              </button>
+        {addNewDo == true ? (
           <form>
-            <div className="form-group">
+            <div className="form-group txt">
               <textarea
                 onChange={this.handleDoChange}
                 className="form-control"
@@ -116,17 +124,23 @@ class DoAndDonts extends Component {
               Enter
             </button>
           </form>
+             ) : (
+                <div></div>
+              )}
 
           <div className="anyClass">
             {this.state.allDo.map((each, index) => (
               <div className="row">
-                <div className="col-md-1">{index + 1 + "."}</div>
-                <div className="col-md-8">{each.text}</div>
-                <div className="col-md-2">
-                  <button type="button" className="btn btn-outline-primary">
-                    <i className="fas fa-thumbs-up"></i>
-                    <span className="badge badge-light">{each.like}</span>
-                  </button>
+                <div className="col-md-1 txt">{index + 1 + "."}</div>
+                <div className={(index%2==0 ? "col-md-8 txt even": "col-md-8 txt odd")}>{each.text}</div>
+                <div className="col-md-2 txt">
+                <button
+                  onClick={() => this.handleLike(each._id)}
+                  className="btn btn-outline-primary"
+                >
+                  <i className="far fa-thumbs-up"></i>{" "}
+                  <span className="badge badge-primary">{each.like}</span>
+                </button>
                 </div>
               </div>
             ))}
@@ -135,8 +149,16 @@ class DoAndDonts extends Component {
 
         {/* =============  Don't */}
         <div className=" col-md-6">
+        <button
+                onClick={this.toggle2}
+                className="btn btn-secondary badge-pill newbtn"
+              >
+                {addNewDont == false ? "Add don't " : "Hide don't"}{" "}
+                <i className="fas fa-question-circle"></i>
+              </button>
+            {addNewDont == true ? (
           <form>
-            <div className="form-group">
+            <div className="form-group txt">
               <textarea
                 onChange={this.handleDontChange}
                 className="form-control"
@@ -153,16 +175,22 @@ class DoAndDonts extends Component {
               Enter
             </button>
           </form>
+           ) : (
+            <div></div>
+          )}
           <div className="anyClass">
             {this.state.allDont.map((each, index) => (
               <div className="row">
-                <div className="col-md-1">{index + 1 + "."}</div>
-                <div className="col-md-8">{each.text}</div>
-                <div className="col-md-2">
-                  <button type="button" className="btn btn-outline-primary">
-                    <i className="fas fa-thumbs-up"></i>
-                    <span className="badge badge-light">{each.like}</span>
-                  </button>
+                <div className="col-md-1 txt">{index + 1 + "."}</div>
+                <div className={(index%2==0 ? "col-md-8 txt even": "col-md-8 txt odd")}>{each.text}</div>
+                <div className="col-md-2 txt">
+                <button
+                  onClick={() => this.handleLike(each._id)}
+                  className="btn btn-outline-primary"
+                >
+                  <i className="far fa-thumbs-up"></i>{" "}
+                  <span className="badge badge-primary">{each.like}</span>
+                </button>
                 </div>
               </div>
             ))}
