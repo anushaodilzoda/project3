@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import moment from "moment";
 
 class NewInput extends Component {
   state = {
@@ -15,10 +16,12 @@ class NewInput extends Component {
     event.target.reset();
     
     const { dashboard, parentMethod } = this.props;
+
     const newQuestion = {
       topic: dashboard,
       question: this.state.question,
-      user: "Temp"
+      user: "Temp",
+      formattedDate: moment().format("YYYY-MM-DD")
       //topic and user are hardcoded for now
     };
     API.saveQuestion(newQuestion)

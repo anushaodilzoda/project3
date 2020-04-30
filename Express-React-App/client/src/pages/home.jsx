@@ -3,6 +3,7 @@ import "../App.css";
 import Topics from "../components/Topics";
 import Navbar from "../components/navbar";
 import DoAndDonts from "../components/DoAndDonts";
+import Footer from '../components/footer';
 
 class Home extends Component {
   state = {};
@@ -17,6 +18,7 @@ class Home extends Component {
 
           <DoAndDonts />
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

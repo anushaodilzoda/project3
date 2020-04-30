@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { timingSafeEqual } from "crypto";
+import moment from "moment";
 
 class Answers extends Component {
   state = {
@@ -28,14 +28,11 @@ class Answers extends Component {
 
     const questionID = this.props.question;
 
-    const today = new Date();
-    var date =
-      today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
     const newAnswer = {
       question: questionID,
       answer: this.state.new,
       user: "Temp",
-      formattedDate: date
+      formattedDate: moment().format("YYYY-MM-DD")
       //user is hardcoded for now
     };
 

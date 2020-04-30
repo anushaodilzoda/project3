@@ -7,7 +7,10 @@ body {
 .navbar {
   background-color: #62b5ce !important;
 }
+
+/* ........................................... */
 /* logo style */
+/* ........................................... */
 .logo {
   background-image: url("./files/Logo.png");
   height: 70px;
@@ -21,7 +24,9 @@ body {
   margin-bottom: 15px;
 }
 
+/* ........................................... */
 /* Home Page style */
+/* ........................................... */
 
 .content {
   margin: 50px 100px;
@@ -64,9 +69,14 @@ img {
   height: 700px;
 }
 
-/* Home Page end */
-
+/* ........................................... */
 /* Posts Page style */
+/* ........................................... */
+
+a {
+  text-decoration: none !important;
+  color: #1b3d63;
+}
 .dash-header {
   margin-bottom: 60px !important;
 }
@@ -109,24 +119,64 @@ img {
   margin: 70px 0px 10px 0px;
 }
 
-/* Posts Page end */
-
+/* ........................................... */
 /* Login an Signup pages */
-
-.wrapper {
-  display: block;
-  position: relative;
-  margin: 0 auto 0;
-  padding: 150px 20px 0 0px;
-  width: 340px;
-  text-align: left;
+/* ........................................... */
+.login, .signup{
+  /* background-image: url("https://usersnap.com/blog/wp-content/uploads/2017/04/web-design-background.png"); */
+  background-color: #0173a7;
+  /* background-position: center;
+  background-attachment: fixed; */
+  /* background-repeat: no-repeat;  */
+  background-size: cover; 
+  height:100vh;
 }
 
+
+.wrapper-box{
+  padding: 40px;
+  background: #54b3dead;
+  width: 370px;
+  height: 470px;
+}
+.wrapper {
+  font-size: 17px;
+  color: white;
+  margin-left: 38%;
+  width: 300px;
+  padding: 200px 20px 0 0px;
+  text-align: center;
+}
+.wrapper a{
+  color: white;
+}
 .wrapper button {
   width: 100%;
 }
 .wrapper .text {
   font-size: 30px;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0px 30px 0px;
+}
+
+.wrapper a{
+  border-bottom: 1px solid white;
+}
+
+/* ........................................... */
+/* FOOTER*/
+/* ........................................... */
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 80%;
+}
+#copyright {
+  transform: translate(40%);
+}
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
 }

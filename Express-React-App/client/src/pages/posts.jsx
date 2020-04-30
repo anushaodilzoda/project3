@@ -92,17 +92,14 @@ class Posts extends Component {
 
           {/* table body */}
 
-          {questions.map((each, index) => (
+          {questions.map((each) => (
             <div className="row question-section shadow-sm">
-              <div className="col-md-1">{index + 1}</div>
+              <div className="col-md-1 my-1" style={{fontSize: 13, color: "gray"}}>{each.formattedDate}</div>
               <div className="col-md-10">
-                {each.question}
-                <button
-                  onClick={() => this.handleShowAnswer(each._id)}
-                  className="btn btn-sm"
-                >
-                  <i className={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
-                </button>
+                <a href="javascript:;" onClick={() => this.handleShowAnswer(each._id)}>
+                {each.question+"   "}
+                <i style={{fontSize: 13}} className={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
+                </a>
                 {showAnswer == each._id ? (
                   <Answer question={each._id} />
                 ) : (
