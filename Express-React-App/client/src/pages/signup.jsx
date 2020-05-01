@@ -37,6 +37,7 @@ export function Signup() {
   return (
     <div className="signup">
     <div className="wrapper" style={{ width: 350 }}>
+    <div className="wrapper-box2 rounded">
       <div className="logo"></div>
       <div className="text">DevPrepp</div>
       <form onSubmit={handleFormSubmit} >
@@ -65,6 +66,7 @@ export function Signup() {
         Already have an account?
         </div>
         <Link to="/login"> Sign in</Link>
+        </div>
     </div>
     </div>
   );
