@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import moment from "moment";
+import moment from 'moment/min/moment-with-locales';
 
 class Answers extends Component {
   state = {
