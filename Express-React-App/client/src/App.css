@@ -1,11 +1,12 @@
 body {
   font-size: 20px;
-  background-color: #f8f9fa;
+  background-color: #abe1f1b3;
   font-family: sans-serif !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
 }
 
 .navbar {
-  background-color: #62b5ce !important;
+  background-color: #0d799c8c !important;
 }
 
 /* ........................................... */
@@ -28,16 +29,12 @@ body {
 /* Home Page style */
 /* ........................................... */
 
-.content {
-  margin: 50px 100px;
-}
-
-.DoAndDontsContent {
-  margin: 50px 280px 100px 100px;
+.content, .DoAndDontsContent{
+  margin: 50px 145px;
 }
 
 .dashboard-content {
-  background-color: #e3e4e44d;
+  background-color: #e3e4e4;
   margin: 50px 200px;
   padding: 30px 50px;
   color: #1b3d63;
@@ -65,26 +62,55 @@ img {
 .anyClass {
   height: 150px;
   overflow-y: scroll;
-  border: 3px solid lightblue !important;
+  border: 3px solid grey#202529 !important;
   height: 700px;
-  margin-top:20px;
+  margin-top: 20px;
+  box-shadow:  5px 5px 5px 10px rgb(188, 236, 125);
 }
-.col-md-1{
-  margin-left:10px!important;
+.col-md-1 {
+  margin-left: 10px !important;
 }
 
-.like{
-  margin-top:10px;
-}
-.txt{
+.like {
   margin-top: 10px;
 }
-.odd{
-color: sienna;
+.txt {
+  margin-top: 10px;
 }
 
-.even{
-color: steelblue;
+.topics{
+  padding: 50px 0px;
+  background-color:  white !important;
+  margin-bottom: 100px;
+}
+.dodont{
+  padding: 50px;
+  background-color: white !important;
+}
+
+.dodont .header{
+  font-size: 40px;
+  text-align: center;
+}
+.dodont .row .do{
+  font-size: 35px;
+  text-align: center;
+}
+.dodont .row .dont{
+  font-size: 35px;
+  text-align: center;
+}
+
+.odd {
+  color: tomato;
+  
+}
+
+.even {
+  color: green;
+}
+.inline {
+  display: inline-block;
 }
 
 /* ........................................... */
@@ -112,6 +138,7 @@ a {
 }
 
 .question-section {
+  font-family: serif !important;
   padding: 10px 0px;
   background-color: white;
   margin: 10px 0px 15px 10px;
@@ -120,6 +147,7 @@ a {
 
 .answer-section {
   margin-top: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
 }
 .answer {
   font-size: 17px;
@@ -140,18 +168,18 @@ a {
 /* ........................................... */
 /* Login an Signup pages */
 /* ........................................... */
-.login, .signup{
+.login,
+.signup {
   /* background-image: url("https://usersnap.com/blog/wp-content/uploads/2017/04/web-design-background.png"); */
   background-color: #0173a7;
   /* background-position: center;
   background-attachment: fixed; */
   /* background-repeat: no-repeat;  */
-  background-size: cover; 
-  height:100vh;
+  background-size: cover;
+  height: 100vh;
 }
 
-
-.wrapper-box{
+.wrapper-box {
   padding: 40px;
   background: #54b3dead;
   width: 370px;
@@ -165,7 +193,7 @@ a {
   padding: 200px 20px 0 0px;
   text-align: center;
 }
-.wrapper a{
+.wrapper a {
   color: white;
 }
 .wrapper button {
@@ -178,7 +206,7 @@ a {
   margin: 20px 0px 30px 0px;
 }
 
-.wrapper a{
+.wrapper a {
   border-bottom: 1px solid white;
 }
 

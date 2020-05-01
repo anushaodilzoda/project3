@@ -95,7 +95,7 @@ class Posts extends Component {
           {questions.map((each) => (
             <div className="row question-section shadow-sm">
               <div className="col-md-1 my-1" style={{fontSize: 13, color: "gray"}}>{each.formattedDate}</div>
-              <div className="col-md-10">
+              <div className="col-md-9">
                 <a href="javascript:;" onClick={() => this.handleShowAnswer(each._id)}>
                 {each.question+"   "}
                 <i style={{fontSize: 13}} className={showAnswer==each._id ? "fas fa-minus" : "fas fa-plus"}></i>
