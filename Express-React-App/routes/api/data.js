@@ -22,11 +22,16 @@ router
 //Matches with "/api/search"
 router.route("/search").get(dataController.search);
 
-router.route("/do").post(dataController.addDo).get(dataController.getAllDo);
+//do dont
 router.route("/likeDo/:answerID").post(dataController.addLikeDo);
+
 router.route("/likeDont/:answerID").post(dataController.addLikeDont);
-router
-  .route("/dont")
+
+router.route("/do")
+  .post(dataController.addDo)
+  .get(dataController.getAllDo);
+
+router.route("/dont")
   .post(dataController.addDont)
   .get(dataController.getAllDont);
 

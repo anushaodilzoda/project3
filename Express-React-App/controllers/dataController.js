@@ -31,7 +31,6 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
 
     //incrementing answer count for the question
-    console.log(req.body.question);
     db.Question.update(
       { _id: req.body.question },
       { $inc: { answer: 1 } }
@@ -89,8 +88,6 @@ module.exports = {
 
   //adding new Do
   addDo: function (req, res) {
-    console.log("in the server: ");
-    console.log(req.body);
     db.Dodun.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
@@ -110,8 +107,6 @@ module.exports = {
   },
   //adding new Dont
   addDont: function (req, res) {
-    console.log("in the server: ");
-    console.log(req.body);
     db.Dodun.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

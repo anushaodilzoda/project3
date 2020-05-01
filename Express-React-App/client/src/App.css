@@ -29,8 +29,12 @@ body {
 /* Home Page style */
 /* ........................................... */
 
-.content, .DoAndDontsContent{
+.content{
   margin: 50px 145px;
+}
+
+.DoAndDontsContent{
+  margin: 50px 50px;
 }
 
 .dashboard-content {

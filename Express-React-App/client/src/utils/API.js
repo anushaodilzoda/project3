@@ -37,6 +37,10 @@ export default {
     return axios.get("api/search", { params: searchPramObj });
   },
 
+  addLike: function (answerID) {
+    return axios.post("api/like/" + answerID);
+  },
+
   //Signin and signup users
 
   signup: function (userInput) {
@@ -48,26 +52,28 @@ export default {
   },
 
   //Enter Do Don't
-  addDo: function (userInput) {
-    return axios.post("api/do", userInput);
-  },
 
   getAllDo: function () {
     return axios.get("api/do");
   },
-  addDo: function (answerID) {
-    return axios.post("api/likeDo/" + answerID);
-  },
-  addDont: function (answerID) {
-    return axios.post("api/likeDont/" + answerID);
-  },
-
   getAllDont: function () {
     return axios.get("api/dont");
   },
-  addLike: function (answerID) {
-    return axios.post("api/like/" + answerID);
+  addDo: function (inputObj) {
+    return axios.post("api/do", inputObj);
   },
+  addDont: function (inputObj) {
+    return axios.post("api/dont", inputObj);
+  },
+  addDoLike: function (answerID) {
+    return axios.post("api/likeDo/" + answerID);
+  },
+  addDontLike: function (answerID) {
+    return axios.post("api/likeDont/" + answerID);
+  },
+
+ 
+ 
 
   // // Gets all books
   // getBooks: function() {

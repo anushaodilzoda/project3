@@ -38,13 +38,21 @@ class DoAndDonts extends Component {
   };
 
   handleDoChange = (event) => {
-    console.log(event.target.value);
     this.setState({ doInput: event.target.value });
   };
   handleDontChange = (event) => {
-    console.log(event.target.value);
     this.setState({ dontInput: event.target.value });
   };
+
+  toggle1 = () => {
+    this.setState({ addNewDo: !this.state.addNewDo });
+  };
+
+  toggle2 = () => {
+    this.setState({ addNewDont: !this.state.addNewDont });
+  };
+
+  // submit do dont 
 
   handleDoSubmit = (event) => {
     event.preventDefault();
@@ -58,20 +66,6 @@ class DoAndDonts extends Component {
       .catch((err) => console.log(err));
   };
 
-  handleLikeDo(answerID) {
-    API.addDo(answerID)
-      .then((res) => this.loadDo())
-      .catch((err) => console.log(err));
-  }
-
-  toggle1 = () => {
-    this.setState({ addNewDo: !this.state.addNewDo });
-  };
-
-  toggle2 = () => {
-    this.setState({ addNewDont: !this.state.addNewDont });
-  };
-
   handleDontSubmit = (event) => {
     event.preventDefault();
     document.getElementById("inputArea2").value = "";
@@ -83,8 +77,17 @@ class DoAndDonts extends Component {
       .then((res) => this.loadDont())
       .catch((err) => console.log(err));
   };
+
+  // like do dont
+
+  handleLikeDo(answerID) {
+    API.addDoLike(answerID)
+      .then((res) => this.loadDo())
+      .catch((err) => console.log(err));
+  }
+
   handleLikeDont(answerID) {
-    API.addDont(answerID)
+    API.addDontLike(answerID)
       .then((res) => this.loadDont())
       .catch((err) => console.log(err));
   }
