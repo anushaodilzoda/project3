@@ -55,18 +55,18 @@ export default {
   getAllDo: function () {
     return axios.get("api/do");
   },
-  addLike: function (answerID) {
+  addDo: function (answerID) {
     return axios.post("api/likeDo/" + answerID);
   },
-  addDont: function (userInput) {
-    return axios.post("api/dont", userInput);
+  addDont: function (answerID) {
+    return axios.post("api/likeDont/" + answerID);
   },
 
   getAllDont: function () {
     return axios.get("api/dont");
   },
   addLike: function (answerID) {
-    return axios.post("api/likeDont/" + answerID);
+    return axios.post("api/like/" + answerID);
   },
 
   // // Gets all books

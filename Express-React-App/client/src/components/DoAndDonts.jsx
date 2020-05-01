@@ -59,7 +59,7 @@ class DoAndDonts extends Component {
   };
 
   handleLikeDo(answerID) {
-    API.addLike(answerID)
+    API.addDo(answerID)
       .then((res) => this.loadDo())
       .catch((err) => console.log(err));
   }
@@ -84,7 +84,7 @@ class DoAndDonts extends Component {
       .catch((err) => console.log(err));
   };
   handleLikeDont(answerID) {
-    API.addLike(answerID)
+    API.addDont(answerID)
       .then((res) => this.loadDont())
       .catch((err) => console.log(err));
   }
