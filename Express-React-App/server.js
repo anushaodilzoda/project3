@@ -1,4 +1,6 @@
 const express = require("express");
+var session = require('express-session');
+
 
 //const connectDB = require("./config/db");
 
@@ -14,6 +16,20 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+
+app.use(session({secret: "Shh, its a secret!"}));
+
+app.get('/', function(req, res){
+    console.log(req.session);
+   if(req.session.page_views){
+      req.session.page_views++;
+      res.send("You visited this page " + req.session.page_views + " times");
+   } else {
+      req.session.page_views = 1;
+      res.send("Welcome to this page for the first time!");
+   }
+});
 
 
 // Add routes, both API and view
