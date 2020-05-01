@@ -58,7 +58,7 @@ class DoAndDonts extends Component {
       .catch((err) => console.log(err));
   };
 
-  handleLike(answerID) {
+  handleLikeDo(answerID) {
     API.addLike(answerID)
       .then((res) => this.loadDo())
       .catch((err) => console.log(err));
@@ -83,7 +83,7 @@ class DoAndDonts extends Component {
       .then((res) => this.loadDont())
       .catch((err) => console.log(err));
   };
-  handleLike(answerID) {
+  handleLikeDont(answerID) {
     API.addLike(answerID)
       .then((res) => this.loadDont())
       .catch((err) => console.log(err));
@@ -92,108 +92,130 @@ class DoAndDonts extends Component {
   render() {
     var { addNewDo } = this.state;
     var { addNewDont } = this.state;
-  
 
     return (
-      <div className="row DoAndDontsContent">
-        {/* =============  Do */}
-        <div className=" col-md-6">
-        <button
-                onClick={this.toggle1}
-                className="btn btn-secondary badge-pill newbtn"
-              >
-                {addNewDont == false ? "Add do " : "Hide do"}{" "}
-                <i className="fas fa-question-circle"></i>
-              </button>
-        {addNewDo == true ? (
-          <form>
-            <div className="form-group txt">
-              <textarea
-                onChange={this.handleDoChange}
-                className="form-control"
-                id="inputArea1"
-                rows="3"
-                placeholder="Your Input..."
-              ></textarea>
-            </div>
+      <div className="dodont">
+        <div className="header">Interview</div>
+        <div className="row">
+          <div className="col-md-7 do">
+            Do's{" "}
             <button
-              onClick={this.handleDoSubmit}
-              type="submit"
-              className="btn btn-outline-dark btn-sm"
+              onClick={this.toggle1}
+              className="btn btn-success badge-pill newbtn mb-3"
             >
-              Enter
+              {addNewDo == false ? "Add do " : "Hide do"}{" "}
+              <i className="fas fa-plus-circle"></i>
             </button>
-          </form>
-             ) : (
-                <div></div>
-              )}
-
-          <div className="anyClass">
-            {this.state.allDo.map((each, index) => (
-              <div className="row">
-                <div className="col-md-1 txt">{index + 1 + "."}</div>
-                <div className={(index%2==0 ? "col-md-8 txt even": "col-md-8 txt odd")}>{each.text}</div>
-                <div className="col-md-2 txt">
-                <button
-                  onClick={() => this.handleLike(each._id)}
-                  className="btn btn-outline-primary"
-                >
-                  <i className="far fa-thumbs-up"></i>{" "}
-                  <span className="badge badge-primary">{each.like}</span>
-                </button>
-                </div>
-              </div>
-            ))}
+          </div>
+          <div className="col-md-3 dont">
+            Dont's{" "}
+            <button
+              onClick={this.toggle2}
+              className="btn btn-success badge-pill newbtn mb-3"
+            >
+              {addNewDont == false ? "Add don't " : "Hide don't"}{" "}
+              <i className="fas fa-plus-circle"></i>
+            </button>
           </div>
         </div>
-
-        {/* =============  Don't */}
-        <div className=" col-md-6">
-        <button
-                onClick={this.toggle2}
-                className="btn btn-secondary badge-pill newbtn"
-              >
-                {addNewDont == false ? "Add don't " : "Hide don't"}{" "}
-                <i className="fas fa-question-circle"></i>
-              </button>
-            {addNewDont == true ? (
-          <form>
-            <div className="form-group txt">
-              <textarea
-                onChange={this.handleDontChange}
-                className="form-control"
-                id="inputArea2"
-                rows="3"
-                placeholder="Your Input..."
-              ></textarea>
-            </div>
-            <button
-              onClick={this.handleDontSubmit}
-              type="submit"
-              className="btn btn-outline-dark btn-sm"
-            >
-              Enter
-            </button>
-          </form>
-           ) : (
-            <div></div>
-          )}
-          <div className="anyClass">
-            {this.state.allDont.map((each, index) => (
-              <div className="row">
-                <div className="col-md-1 txt">{index + 1 + "."}</div>
-                <div className={(index%2==0 ? "col-md-8 txt even": "col-md-8 txt odd")}>{each.text}</div>
-                <div className="col-md-2 txt">
-                <button
-                  onClick={() => this.handleLike(each._id)}
-                  className="btn btn-outline-primary"
-                >
-                  <i className="far fa-thumbs-up"></i>{" "}
-                  <span className="badge badge-primary">{each.like}</span>
-                </button>
+        <div className="row DoAndDontsContent">
+          {/* =============  Do */}
+          <div className=" col-md-6">
+            {addNewDo == true ? (
+              <form>
+                <div className="form-group txt">
+                  <textarea
+                    onChange={this.handleDoChange}
+                    className="form-control"
+                    id="inputArea1"
+                    rows="3"
+                    placeholder="Your Input..."
+                  ></textarea>
                 </div>
-              </div>
-            ))}
+                <button
+                  onClick={this.handleDoSubmit}
+                  type="submit"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  Enter
+                </button>
+              </form>
+            ) : (
+              <div></div>
+            )}
+
+            <div className="anyClass">
+              {this.state.allDo.map((each, index) => (
+                <div className="row">
+                  <div className="col-md-1 txt"></div>
+                  <div
+                    className={
+                      index % 2 == 0 ? "col-md-8 txt even" : "col-md-8 txt odd"
+                    }
+                  >
+                    {each.text}
+                  </div>
+                  <div className="col-md-2 txt">
+                    <button
+                      onClick={() => this.handleLikeDo(each._id)}
+                      className="btn btn-outline-success"
+                    >
+                      <i className="far fa-thumbs-up"></i>{" "}
+                      <span className="badge badge-success">{each.like}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* =============  Don't */}
+          <div className=" col-md-6">
+            {addNewDont == true ? (
+              <form>
+                <div className="form-group txt">
+                  <textarea
+                    onChange={this.handleDontChange}
+                    className="form-control"
+                    id="inputArea2"
+                    rows="3"
+                    placeholder="Your Input..."
+                  ></textarea>
+                </div>
+                <button
+                  onClick={this.handleDontSubmit}
+                  type="submit"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  Enter
+                </button>
+              </form>
+            ) : (
+              <div></div>
+            )}
+            <div className="anyClass">
+              {this.state.allDont.map((each, index) => (
+                <div className="row">
+                  <div className="col-md-1 txt"></div>
+                  <div
+                    className={
+                      index % 2 == 0 ? "col-md-8 txt even" : "col-md-8 txt odd"
+                    }
+                  >
+                    {each.text}
+                  </div>
+                  <div className="col-md-2 txt">
+                    <button
+                      onClick={() => this.handleLikeDont(each._id)}
+                      className="btn btn-outline-success"
+                    >
+                      <i className="far fa-thumbs-up"></i>{" "}
+                      <span className="badge badge-success">{each.like}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

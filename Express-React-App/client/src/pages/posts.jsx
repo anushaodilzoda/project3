@@ -5,7 +5,7 @@ import Search from "../components/search";
 import API from "../utils/API";
 import Navbar from "../components/navbar";
 import Answer from "../components/answers";
-import Footer from "../components/footer";
+import Footer from "../components/footer"
 
 class Posts extends Component {
   state = {
@@ -101,7 +101,7 @@ class Posts extends Component {
                 >
                   {each.formattedDate}
                 </div>
-                <div className="col-md-10">
+                <div className="col-md-9">
                   <a
                     href="javascript:;"
                     onClick={() => this.handleShowAnswer(each._id)}
