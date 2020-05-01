@@ -102,12 +102,12 @@ img {
 }
 
 .odd {
-  color: tomato;
+  color: black;
   
 }
 
 .even {
-  color: green;
+  color: #515A5A;
 }
 .inline {
   display: inline-block;

@@ -135,7 +135,7 @@ class DoAndDonts extends Component {
                 <button
                   onClick={this.handleDoSubmit}
                   type="submit"
-                  className="btn btn-outline-dark btn-sm"
+                  className="btn btn-outline-white btn-sm btn-success"
                 >
                   Enter
                 </button>
@@ -185,7 +185,8 @@ class DoAndDonts extends Component {
                 <button
                   onClick={this.handleDontSubmit}
                   type="submit"
-                  className="btn btn-outline-dark btn-sm"
+                  className="btn btn-outline-white btn-sm btn-success"
+                  
                 >
                   Enter
                 </button>
