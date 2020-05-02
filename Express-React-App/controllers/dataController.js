@@ -98,7 +98,7 @@ module.exports = {
   //getting all Do.s
   getAllDo: function (req, res) {
     db.Dodun.find({ type: "Do" })
-      .sort({ date: 1 })
+      .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -117,7 +117,7 @@ module.exports = {
   //getting all Dont
   getAllDont: function (req, res) {
     db.Dodun.find({ type: "Dont" })
-      .sort({ date: 1 })
+      .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

@@ -3,6 +3,7 @@ body {
   background-color: #abe1f1b3;
   font-family: sans-serif !important;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
+  height: 100%;
 }
 
 .navbar {
@@ -279,10 +280,8 @@ footer {
   background-color: #e6e5e5;
   padding: 50px;
   font-size: 80%;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
+
 #copyright {
   transform: translate(40%);
 }
@@ -292,3 +291,4 @@ footer p {
   text-align: center;
   margin-top: 20px;
 }
+
