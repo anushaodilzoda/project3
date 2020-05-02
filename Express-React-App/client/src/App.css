@@ -227,6 +227,10 @@ footer {
   background-color: #e6e5e5;
   padding: 50px;
   font-size: 80%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 #copyright {
   transform: translate(40%);
