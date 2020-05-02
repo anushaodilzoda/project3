@@ -9,12 +9,15 @@ class Login extends Component {
     redirect: false,
     email: '',
     password: '',
+    errorMsg: '',
   };
 
   handleEmailChange = event => {
+    this.setState({errorMsg: ''});
     this.setState({ email: event.target.value });
   };
   handlePassChange=event=>{
+      this.setState({errorMsg: ''});
       this.setState({password: event.target.value})
   }
   
@@ -26,7 +29,7 @@ class Login extends Component {
         password: this.state.password
       })
         .then(res => this.setState({redirect: true}))
-        .catch(err => console.log(err));
+        .catch(err => this.setState({errorMsg: "invalid credentials"}));
   };
 
 
@@ -52,6 +55,9 @@ class Login extends Component {
             Sign in
           </button>
         </form>
+        <div style={{color: "red", background: "white", marginBottom: 10,}}>
+        {this.state.errorMsg} 
+        </div>
         <div>
         Don't have an account?  
         </div>

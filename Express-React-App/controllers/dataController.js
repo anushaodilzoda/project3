@@ -10,6 +10,8 @@ module.exports = {
 
   //fetching all questions for the requested topic
   populateDashboard: function (req, res) {
+    console.log("User: ");
+    console.log(req.user);
     var name = req.params.name;
     if (name == "All Topics") {
       db.Question.find({})

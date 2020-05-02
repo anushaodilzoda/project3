@@ -120,7 +120,7 @@ class Posts extends Component {
                     <div></div>
                   )}
                 </div>
-                <div style={{ color: "gray" }} className="col-md-1">
+                <div style={{ color: "gray" }} id={each._id} className="col-md-1">
                   {each.answer + "  "}
                   <span style={{ fontSize: 13 }}>Answers</span>
                 </div>
