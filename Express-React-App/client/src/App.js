@@ -14,14 +14,6 @@ class  App extends Component {
       <Route path="/signup" exact component={Signup} />
       <Route path="/login" exact component={Login} />
       <Route path="/" exact component={Home} />
-      {/* <Route
-        path="/"
-        exact
-        render={props => {
-          if (!user) return <Redirect to="/login" />;
-          return <Home />;
-        }}
-      /> */}
       <Route path="/dashboard" component={Posts} />
     </div> );
   }

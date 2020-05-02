@@ -56,15 +56,15 @@ class Posts extends Component {
 
     return (
       <React.Fragment>
-        <div className="post-page">
           <Navbar />
+        <div className="post-page">
           <div className="dashboard-content ">
             <div className="row dash-header">
               <h1>{dashboard}</h1>
               {dashboard != "All Topics" ? (
                 <button
                   onClick={this.toggle}
-                  className="btn btn-secondary badge-pill newbtn"
+                  className="btn btn-primary badge-pill newbtn"
                 >
                   {addNew == false ? "Add " : "Hide "}{" "}
                   <i className="fas fa-question-circle"></i>
@@ -89,7 +89,7 @@ class Posts extends Component {
               <button
                 onClick={this.reload}
                 type="button"
-                className="btn btn-outline-primary m-2"
+                className="btn btn-primary m-2"
               >
                 Show all
               </button>

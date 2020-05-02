@@ -19,7 +19,7 @@ class Navbar extends Component {
         <Link className="navbar-brand" to="/">
           <div className="logo"></div>
         </Link>
-
+        <h2 className="m-2">DevPrepp</h2>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item dropdown">

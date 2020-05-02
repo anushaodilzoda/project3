@@ -17,7 +17,6 @@ class Home extends Component {
       <React.Fragment>
         <Navbar />
         <div className="content">
-        <h2>Home</h2>
         <div className="topics">
           <Topics />
           </div>

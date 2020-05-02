@@ -1,5 +1,5 @@
 body {
-  font-size: 20px;
+  font-size: 28px;
   background-color: #abe1f1b3;
   font-family: sans-serif !important;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
@@ -7,6 +7,17 @@ body {
 
 .navbar {
   background-color: #0d799c8c !important;
+}
+
+#navbarDropdown {
+  color: white;
+}
+.dropdown-item {
+  font-size: 20px;
+}
+
+.collapse {
+  margin-left: 75%;
 }
 
 /* ........................................... */
@@ -29,16 +40,27 @@ body {
 /* Home Page style */
 /* ........................................... */
 
-.content{
-  margin: 50px 145px;
+.content {
+  font-size: 25px;
+  padding: 50px 145px !important;
+  background-color: #555;
+  padding-top: 2%;
+  padding-left: 3%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.91)),
+    url("https://teacher.bahonafeedback.com/assets/img/backgrounds/1@2x.jpg");
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
 }
 
-.DoAndDontsContent{
+.DoAndDontsContent {
   margin: 50px 50px;
 }
 
 .dashboard-content {
-  background-color: #e3e4e4;
+  /* background-color: #e3e4e4; */
   margin: 50px 200px;
   padding: 30px 50px;
   color: #1b3d63;
@@ -64,13 +86,27 @@ img {
   border: 3px solid lightblue !important;
 }
 .anyClass {
+  background-color: white;
   height: 150px;
   overflow-y: scroll;
   border: 3px solid grey#202529 !important;
-  height: 700px;
+  height: 900px;
   margin-top: 20px;
-  box-shadow:  5px 5px 5px 10px rgb(188, 236, 125);
+  box-shadow: 5px 5px 5px 10px rgb(188, 236, 125);
 }
+
+.anyClass .col-md-2 {
+  border-top: 1px solid #e2dbdb;
+  padding-left: 40px;
+}
+
+.anyClass .col-md-8 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-top: 1px solid #e2dbdb;
+  padding-right: 50px;
+}
+
 .col-md-1 {
   margin-left: 10px !important;
 }
@@ -82,36 +118,33 @@ img {
   margin-top: 10px;
 }
 
-.topics{
-  padding: 50px 0px;
-  background-color:  white !important;
-  margin-bottom: 100px;
+.topics {
+  padding: 30px 0px;
 }
-.dodont{
+.dodont {
   padding: 50px;
-  background-color: white !important;
 }
 
-.dodont .header{
-  font-size: 40px;
+.dodont .header {
+  margin-top: 80px;
+  font-size: 50px;
   text-align: center;
 }
-.dodont .row .do{
+.dodont .row .do {
   font-size: 35px;
   text-align: center;
 }
-.dodont .row .dont{
+.dodont .row .dont {
   font-size: 35px;
   text-align: center;
 }
 
 .odd {
   color: black;
-  
 }
 
 .even {
-  color: #515A5A;
+  color: black;
 }
 .inline {
   display: inline-block;
@@ -121,9 +154,27 @@ img {
 /* Posts Page style */
 /* ........................................... */
 
+h1,
+h5 {
+  color: white;
+}
+
+.post-page {
+  background-color: #555;
+  padding-top: 1%;
+  padding-left: 3%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.91)),
+    url("https://teacher.bahonafeedback.com/assets/img/backgrounds/1@2x.jpg");
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+}
+
 a {
   text-decoration: none !important;
-  color: #1b3d63;
+  color: #007bff;
 }
 .dash-header {
   margin-bottom: 60px !important;
@@ -142,10 +193,11 @@ a {
 }
 
 .question-section {
-  font-family: serif !important;
-  padding: 10px 0px;
+  font-family: Cochin !important;
+  font-size: 25px;
+  padding: 17px 0px;
   background-color: white;
-  margin: 10px 0px 15px 10px;
+  margin: 30px 0px 20px 10px;
   border-radius: 10px;
 }
 
@@ -154,7 +206,7 @@ a {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif !important;
 }
 .answer {
-  font-size: 17px;
+  font-size: 19px;
   padding: 10px 10px;
   background-color: #efefef;
   margin: 10px 0px 15px 10px;
@@ -227,7 +279,6 @@ footer {
   background-color: #e6e5e5;
   padding: 50px;
   font-size: 80%;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -236,6 +287,7 @@ footer {
   transform: translate(40%);
 }
 footer p {
+  font-size: 17px;
   color: #777575;
   text-align: center;
   margin-top: 20px;
