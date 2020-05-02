@@ -56,6 +56,7 @@ console.log(name, email, password1, password2);
 
     return ( <div className="signup">
     <div className="wrapper" style={{ width: 350 }}>
+    <div className="wrapper-box2 rounded">
       <div className="logo"></div>
       <div className="text">DevPrepp</div>
       <form onSubmit={this.handleFormSubmit} >
@@ -87,6 +88,7 @@ console.log(name, email, password1, password2);
         Already have an account?
         </div>
         <Link to="/login"> Sign in</Link>
+        </div>
     </div>
     </div> 
     );

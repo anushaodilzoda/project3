@@ -189,6 +189,12 @@ a {
   width: 370px;
   height: 470px;
 }
+.wrapper-box2 {
+  padding: 40px;
+  background: #54b3dead;
+  width: 370px;
+  height: 550px;
+}
 .wrapper {
   font-size: 17px;
   color: white;
