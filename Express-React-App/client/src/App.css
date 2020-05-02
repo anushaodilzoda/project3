@@ -195,11 +195,23 @@ a {
 
 .question-section {
   font-family: Cochin !important;
-  font-size: 25px;
+  font-size: 21px;
   padding: 17px 0px;
   background-color: white;
   margin: 30px 0px 20px 10px;
   border-radius: 10px;
+}
+
+.question-date{
+  font-size: 13px;
+  color: gray;
+  margin: 5px 25px 0px 20px;
+}
+
+.answer-count{
+  color: gray;
+  font-size: 13px;
+  margin-left: 20px;;
 }
 
 .answer-section {

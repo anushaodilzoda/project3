@@ -99,9 +99,7 @@ class Posts extends Component {
 
             {questions.map(each => (
               <div className="row question-section shadow-sm">
-                <div
-                  className="col-md-1 my-1"
-                  style={{ fontSize: 13, color: "gray" }}
+                <div className="question-date"
                 >
                   {each.formattedDate}
                 </div>
@@ -124,7 +122,7 @@ class Posts extends Component {
                     <div></div>
                   )}
                 </div>
-                <div style={{ color: "gray" }} id={each._id} className="col-md-1">
+                <div className="answer-count">
                   {each.answer + "  "}
                   <span style={{ fontSize: 13 }}>Answers</span>
                 </div>

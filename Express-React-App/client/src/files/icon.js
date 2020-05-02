@@ -23,7 +23,7 @@ var data = {
   _angular:"https://img.icons8.com/color/150/000000/angularjs.png",
   _express:"https://png.pngtree.com/svg/20161010/ex_968069.png",
   _jquery:"https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/jquery-512.png",
-
+  _python: "https://www.python.org/static/opengraph-icon-200x200.png"
 }
 
 module.exports.data=data;
