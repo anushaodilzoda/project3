@@ -158,7 +158,7 @@ class DoAndDonts extends Component {
                   >
                     {each.text}
                   </div>
-                  <div className="col-md-2 txt">
+                  <div className="txt">
                     <button
                       onClick={() => this.handleLikeDo(each._id)}
                       className="btn btn-outline-success"
@@ -208,7 +208,7 @@ class DoAndDonts extends Component {
                   >
                     {each.text}
                   </div>
-                  <div className="col-md-2 txt">
+                  <div className="txt">
                     <button
                       onClick={() => this.handleLikeDont(each._id)}
                       className="btn btn-outline-success"
