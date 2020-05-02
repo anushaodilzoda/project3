@@ -108,13 +108,9 @@ class Posts extends Component {
                     href="javascript:;"
                     onClick={() => this.handleShowAnswer(each._id)}
                   >
+                    <p>
                     {each.question + "   "}
-                    <i
-                      style={{ fontSize: 13 }}
-                      className={
-                        showAnswer == each._id ? "fas fa-minus" : "fas fa-plus"
-                      }
-                    ></i>
+                    </p>
                   </a>
                   {showAnswer == each._id ? (
                     <Answer question={each._id} />

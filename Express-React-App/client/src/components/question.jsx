@@ -36,14 +36,27 @@ class NewInput extends Component {
         className="form-row align-items-center new-entry m-1"
       >
         <div className="col-sm-10 my-2">
-          <input
-            onChange={this.handleChange}
-            className="form-control"
-            rows="1"
-            name="question"
-            // placeholder="Enter new question"
-            style={{borderRadius: 20}}
-          ></input>
+          {this.props.dashboard=="Coding" ?
+                    (  <textarea
+                      onChange={this.handleChange}
+                      className="form-control"
+                      id="question"
+                      rows="3"
+                      placeholder="Your Question..."
+                    ></textarea>  )
+                    :
+                    (
+                      <input
+                      onChange={this.handleChange}
+                      className="form-control"
+                      rows="1"
+                      name="question"
+                      // placeholder="Enter new question"
+                      style={{borderRadius: 20}}
+                    ></input>
+                    )
+        }
+
         </div>
         <div className="col-sm-2">
           <button type="submit" className="btn badge-pill btn-primary">
