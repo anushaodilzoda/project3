@@ -6,6 +6,7 @@ import API from "../utils/API";
 import Navbar from "../components/navbar";
 import Answer from "../components/answers";
 import Footer from "../components/footer"
+import { Redirect } from 'react-router-dom'
 
 class Posts extends Component {
   state = {
@@ -48,6 +49,9 @@ class Posts extends Component {
   };
 
   render() {
+    if(!localStorage.getItem("DevPrepp-User")){
+      return <Redirect from="/dashboard" to='/login' />
+    }
     var { addNew, dashboard, questions, showAnswer } = this.state;
 
     return (
@@ -120,7 +124,7 @@ class Posts extends Component {
                     <div></div>
                   )}
                 </div>
-                <div style={{ color: "gray" }} className="col-md-1">
+                <div style={{ color: "gray" }} id={each._id} className="col-md-1">
                   {each.answer + "  "}
                   <span style={{ fontSize: 13 }}>Answers</span>
                 </div>

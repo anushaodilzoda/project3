@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
 
 class Navbar extends Component {
   state = {};
+
+    logout = ()=>{
+      localStorage.removeItem("DevPrepp-User");
+      if(!localStorage.getItem("DevPrepp-User")){
+        return <Redirect from="/" to='/login' />
+      }
+    }
+
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,19 +32,13 @@ class Navbar extends Component {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Dropdown
+                Welcome
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
-                  Action
+                <a className="dropdown-item" href="#" onClick={this.logout}>
+                  Sign out
                 </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
+       
               </div>
             </li>
           </ul>

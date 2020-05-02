@@ -1,73 +1,103 @@
-import React, { useState } from "react";
-import { Input, FormBtn } from "../components/Form";
+import React, { Component } from "react";
+import { Input } from "../components/Form";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 
-export function Signup() {
-  const [formObject, setFormObject] = useState({});
+class Signup extends Component {
+  state = { 
+    formObject: { name: '', email: '', password1:'', password2:''
+    },
+    errorMsg: '',
+   }
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
+     // Handles updating component state when the user types into the input field
+  handleInputChange = (event) => {
+    this.setState({errorMsg: ''});
     const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value });
+    let newObject = this.state.formObject;
+    newObject[name] = value;
+    this.setState({
+      formObject: newObject 
+    })
+
   }
 
   // When the form is submitted, use the API.signup method to save the employees data
-  function handleFormSubmit(event) {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-    event.target.reset();
-
-    if (formObject.password1 == formObject.password2) {
+    var { name, email, password1, password2 } = this.state.formObject;
+console.log(name, email, password1, password2);
+    if (password1 == password2) {
       API.signup({
-        name: formObject.name,
-        email: formObject.email,
-        password: formObject.password1
+        name: name,
+        email: email,
+        password: password1
       })
-        .then(res => console.log("Successfully signed up"))
-        .catch(err => console.log(err));
+        .then(res => this.setState({errorMsg: "Successfully signed up!"}))
+        .catch(err => 
+          {
+            if(err.response.status==401){
+              this.setState({errorMsg: "The user already exists"})
+            } else{
+              this.setState({errorMsg: "The passwords lenght must be more than 6"})
+            }
+          }
+          );
     } else {
-      console.log(
-        "This needs to show in the screen=> The passwords did not match"
-      );
+      this.setState({errorMsg: "The passwords did not match"})
     }
   }
 
-  var { name, email, password1, password2 } = formObject;
 
-  return (
-    <div className="signup">
+
+  render() { 
+
+    var { name, email, password1, password2 } = this.state.formObject;
+
+    return ( <div className="signup">
     <div className="wrapper" style={{ width: 350 }}>
     <div className="wrapper-box2 rounded">
       <div className="logo"></div>
       <div className="text">DevPrepp</div>
-      <form onSubmit={handleFormSubmit} >
-        <Input onChange={handleInputChange} name="name" placeholder="Name" />
-        <Input onChange={handleInputChange} name="email" placeholder="Email" />
+      <form onSubmit={this.handleFormSubmit} >
+        <Input onChange={this.handleInputChange} name="name" placeholder="Name" />
+        <Input onChange={this.handleInputChange} name="email" placeholder="Email" />
         <Input
-          onChange={handleInputChange}
+          onChange={this.handleInputChange}
           type="password"
           name="password1"
           placeholder="Password"
         />
         <Input
-          onChange={handleInputChange}
+          onChange={this.handleInputChange}
           type="password"
           name="password2"
           placeholder="Confirm password"
         />
         <button className="btn btn-primary mb-3"
-          disabled={!(name && email && password1 && password2)}
+           disabled={!(name && email && password1 && password2)}
           type="submit"
         >
           Sign up
         </button>
       </form>
+      <div style={{color: "red", background: "white", marginBottom: 10,}}>
+        {this.state.errorMsg} 
+        </div>
       <div>
         Already have an account?
         </div>
         <Link to="/login"> Sign in</Link>
         </div>
     </div>
-    </div>
-  );
+    </div> 
+    );
+  }
 }
+
+ 
+export default Signup;
+
+
+
+ 

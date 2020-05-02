@@ -4,11 +4,15 @@ import Topics from "../components/Topics";
 import Navbar from "../components/navbar";
 import DoAndDonts from "../components/DoAndDonts";
 import Footer from '../components/footer';
+import { Redirect } from 'react-router-dom'
 
 class Home extends Component {
   state = {};
 
   render() {
+    if(!localStorage.getItem("DevPrepp-User")){
+      return <Redirect from="/" to='/login' />
+    }
     return (
       <React.Fragment>
         <Navbar />
