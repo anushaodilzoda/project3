@@ -28,7 +28,7 @@ class Login extends Component {
         email: this.state.email,
         password: this.state.password
       })
-        .then(res => this.setState({redirect: true}))
+        .then(res => { localStorage.setItem("DevPrepp-User", this.state.email ); this.setState({redirect: true});})
         .catch(err => this.setState({errorMsg: "invalid credentials"}));
   };
 
