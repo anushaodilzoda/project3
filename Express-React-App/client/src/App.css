@@ -57,7 +57,7 @@ body {
 }
 
 .DoAndDontsContent {
-  margin: 50px 50px;
+  margin: 50px 50px 300px 50px;
 }
 
 .dashboard-content {
@@ -209,7 +209,7 @@ a {
 .answer {
   font-size: 19px;
   padding: 10px 10px;
-  background-color: #efefef;
+  background-color: #dee1e4;
   margin: 10px 0px 15px 10px;
 }
 
@@ -278,7 +278,7 @@ a {
 /* ........................................... */
 footer {
   background-color: #e6e5e5;
-  padding: 50px;
+  padding: 25px;
   font-size: 80%;
 }
 

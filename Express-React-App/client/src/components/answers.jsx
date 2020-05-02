@@ -36,15 +36,8 @@ class Answers extends Component {
       //user is hardcoded for now
     };
 
-    function change(){
-      console.log("id",questionID);
-      var val=document.getElementById(questionID).value();
-     
-      console.log(val);
-    }
-
     API.saveAnswer(newAnswer)
-      .then((res) => {change(); this.loadAnswers()})
+      .then((res) => this.loadAnswers())
       .catch((err) => console.log(err));
   };
 
