@@ -54,12 +54,12 @@ class Answers extends Component {
           {this.state.answers.map((each, index) => (
             <div className="row answer">
               <span>{index + 1 + "."}</span>
-              <div className="col-md-10">
+              <p className="col-md-10">
                 {each.answer}{" "}
                 <span className="answer-date">
                   {"(" + each.formattedDate + ")"}
                 </span>
-              </div>
+              </p>
               <div className="likes">
                 <button
                   onClick={() => this.handleLike(each._id)}
